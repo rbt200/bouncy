@@ -1,0 +1,27 @@
+// -- DESCRIPTION --
+// the order of the arguments is importent
+// null is used for the default value
+// default values are mentioned as arguments
+// the last ones may be omitted if they are in the default state
+// if an argument in default state is not the last one, then [null] must be used
+
+@mixin display-flex ($row: row, $wrap: nowrap, $justify-content: flex-start, $align-items: stretch, $align-content: stretch) {
+    display: flex;
+    flex-flow: $row $wrap;
+    justify-content: $justify-content;
+    align-items: $align-items;
+    align-content: $align-content;  
+}
+
+@mixin width-height ($width: inherit, $height: inherit) {
+    width: $width;
+    height: $height;
+}
+
+@mixin clearfix() {
+    &::after {
+      display: block;
+      content: "";
+      clear: both;
+    }
+  }

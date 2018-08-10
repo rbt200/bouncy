@@ -1,0 +1,30 @@
+{
+  "name": "bouncy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://rogachko@bitbucket.org/rogachko/bouncy.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/rogachko/bouncy#readme",
+  "devDependencies": {
+    "browser-sync": "^2.24.5",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-image": "^4.3.0",
+    "gulp-sass": "^4.0.1",
+    "gulp-pug": "^4.0.1",
+    "jquery": "^3.3.1"
+  },
+  "keywords": [
+    "bouncy"
+  ]
+}
