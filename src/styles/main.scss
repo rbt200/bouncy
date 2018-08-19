@@ -101,7 +101,7 @@ body {
         text-align: center;
     }
     &__title {
-        font: 200 2.187em 'SourceSansPro';
+        font: 200 2.187em '$font_2';
         color: $color_1;
     }
     &__subtitle {
@@ -156,8 +156,8 @@ body {
         align-self: center;
     }
     &__title {
-        // font: 300 1.35em 'SourceSansPro';
-        font: 300 'SourceSansPro';
+        // font: 300 1.35em '$font_2';
+        font: 300 '$font_2';
         color: $color_3;
     }
     &__text {
@@ -225,6 +225,150 @@ body {
         &__ipad {
             grid-row: 1;
             grid-column: 8/11;
+        }
+    }
+}
+// DETAILS
+.details {
+    @include width-height(100%);
+    grid-area: details;
+    display: block;    
+    background-color: $color_7;
+    padding: 2em 0;
+    &__container {
+        @include width-height(90%);
+        margin: 0 auto;
+        text-align: center;
+    }
+    &__title {
+        font: 300 1.3em $font_2;
+        color: $color_3;
+    }
+    &__subtitle {
+        font: normal 0.85em $font_3;
+        color: $color_4;
+    }
+    &__button {
+        @include width-height(3.437em, 3.437em);
+        outline: none;
+        background-color: $color_8;
+        border: {
+            radius: 10em;
+            width: 0;
+        }
+    }
+    @keyframes details-button {
+        0%   {background-color: $color_8;}
+        100%  {background-color: $color_9;}        
+    }
+    &__button:hover {
+        cursor: pointer;
+        animation-name: details-button;
+        animation-duration: 0.5s;
+        background-color: $color_9;
+        box-shadow:1px 1px 2px black, 0 0 25px $color_5, 0 0 5px $color_6;
+    }
+    &__button:hover:after {
+        background-color: $color_8;
+    }
+    // pressed
+    &__button:active {
+        background-color: $color_6;
+    }
+    // unpressed
+    &__button:active:after {
+        background-color: $color_8;
+    }
+    &__active_true {
+        background-color: $color_9;
+    }
+    &__button_bg_heart {
+        background-image: url(../assets/img/icon-details-heart.png);
+    }
+    &__button_bg_mouse {
+        background-image: url(../assets/img/icon-details-mouse.png);
+    }
+    &__button_bg_lamp {
+        background-image: url(../assets/img/icon-details-lamp.png);
+    }
+    &__color_green {
+        color: $color_9;
+    }
+    &__color_black {
+        color: $color_10;
+    }
+    &__bold_true {
+        font-weight: bold;
+    }
+    &__info-title {
+        font-family: $font_3;
+        color: $color_3;
+    }
+    &__info-text {
+        font: none 1em $font_3;
+        text-align: left;
+        color: $color_4;
+    }
+    @media #{$media-type_1} and (min-width: $screen-sm) {
+        &__container {
+            @include width-height(70%);
+        }  
+    }
+    @media #{$media-type_1} and (min-width: $screen-md) {
+        &__container {
+            @include width-height(80%);
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(3, auto);
+        }
+        &__header {
+            grid-row: 1;
+            grid-column: 1;
+        }
+        &__button-container {
+            grid-row: 2;
+            grid-column: 1;
+        }
+        &__info-container {
+            grid-row: 3;
+            grid-column: 1;
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: repeat(2, auto);
+        }
+        &__info-title {
+            grid-row: 1;
+            grid-column: 1/12;
+            justify-self: start;
+        }
+        &__info-1 {
+            grid-row: 2;
+            grid-column: 1/4;
+        }
+        &__info-2 {
+            grid-row: 2;
+            grid-column: 5/12;
+        }
+    }
+    @media #{$media-type_1} and (min-width: $screen-lg) {
+        padding: 4.7em 6em;
+        &__container {
+            @include width-height(70%);
+        }
+        &__header {
+            grid-row: 1;
+            grid-column: 1;
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+        }
+        &__title {
+            grid-column: 5/9;
+        }
+        &__subtitle {
+            grid-column: 4/10;
+        }
+        &__button-container {
+            margin: 2em 0;
         }
     }
 }
