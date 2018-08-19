@@ -1,11 +1,235 @@
 @import 'sass/base/_normalize.scss';
 @import 'sass/helpers/_mixins.scss';
 @import 'sass/helpers/_variables.scss';
-
+@font-face {
+    font-family: 'BigJohn';
+    src: url('../assets/fonts/BigJohn/BigJohn.woff') format('woff');
+  }
+html {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  } 
 body {
     @include width-height(100%);
+    font-size: 16px;
 }
-
+// WRAPPER
 .wrapper {
     @include width-height(100%);
+    display: grid;
+    grid-template-areas:
+     "header"
+     "about"
+     "details"
+     "features"
+     "submit"
+     "services"
+     "quotes"
+     "portfolio"
+     "project"
+     "team"
+     "textimonials"
+     "blog"
+     "price"
+     "subscribe"
+     "contact"
+     "map"
+     "footer";
+    // max-width: 1365px;
+    background-color: $color_1;
+    @media #{$media-type_1} and (min-width: $screen-lg) {
+        .header__container, .footer__container, .about__container {
+            @include width-height(80%);
+            margin: 0 auto;
+        }
+    }
+}
+// HEADER
+.header {
+    @include width-height(100%);
+    @include display-flex(row, nowrap, center, center);
+    grid-area: header;
+    background: {
+        image: url(../assets/img/bg-header.png);
+        position: center center;
+        size: cover;
+    }    
+    &__container {
+        @include width-height(100%);
+        @include display-flex(column, nowrap, center, center);
+        padding-bottom: 2em;
+    }  
+    &__upper {
+        @include width-height(100%);
+        @include display-flex(row, wrap, center, center);
+    }  
+    &__logo {
+        font: 800 1.6em 'Montserrat';
+        color: $color_1;
+        margin-left: 5%;
+    }    
+    &__nav {
+        @include display-flex(row, wrap, center, center);       
+    }
+    &__link-container {
+        color:  $color_1;
+        margin: 0;
+        padding: 0.3em 1.2em;
+    }
+    &__link-container:hover {
+        cursor: pointer;
+        border: {
+            style: solid;
+            width: 0.05em; 
+            color: $color_1;
+            radius: 1em;
+        }
+        padding: 0.25em 1.15em;    
+    }
+    &__link {
+        font: normal 1em 'Open Sans';
+        text-decoration: none;        
+    }    
+    &__middle {
+        @include width-height(100%);
+        @include display-flex(column, nowrap, center, center);
+    }
+    &__middle-container {
+        @include width-height(80%);
+        text-align: center;
+    }
+    &__title {
+        font: 200 2.187em 'SourceSansPro';
+        color: $color_1;
+    }
+    &__subtitle {
+        font: normal 1em 'Open Sans';
+        color: $color_1;
+    }
+    &__button {
+        background: {
+            url: url(../assets/img/icon-header-arrow.png);
+        }
+    }
+    &__button:hover {
+        cursor: pointer;
+    }
+    @media #{$media-type_1} and (min-width: $screen-md) {
+        &__upper {
+            @include display-flex(row, wrap, space-between, center);
+        }
+        &__middle-container {
+            @include width-height(60%);
+            margin: 3em 0;
+        }
+    }
+    @media #{$media-type_1} and (min-width: $screen-lg) {
+        @include width-height(100%, auto);
+        padding: 0em 0 4.687em;
+        &__container {
+            @include width-height(80%);
+            padding: 0;
+        }
+        &__middle-container {
+            @include width-height(50%);
+            margin: 13em;
+        }
+    }
+}
+// ABOUT
+.about {
+    @include width-height(100%);
+    grid-area: about;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, auto);
+    padding: 2em 0;
+    &__info {
+        @include width-height(80%);
+        grid-row: 2;
+        grid-column: 0.7fr;
+        text-align: center;
+        margin: 0 auto;
+        justify-self: center;
+        align-self: center;
+    }
+    &__title {
+        // font: 300 1.35em 'SourceSansPro';
+        font: 300 'SourceSansPro';
+        color: $color_3;
+    }
+    &__text {
+        font: normal 0.85em 'Open Sans';
+        color: $color_4;
+    }
+    &__button {
+        margin: 1em 0 2em;
+        padding: 0.7em 2em;
+        background-color: $color_1;
+        border: {
+            style: solid;
+            width: 0.05em;
+            color: $color_3;
+            radius: 10em;
+        }
+        outline: none;
+    }
+    @keyframes about-button {
+        0%   {background-color: $color_1;}
+        100%  {background-color: $color_5;}        
+    }
+    &__button:hover {
+        cursor: pointer;
+        animation-name: about-button;
+        animation-duration: 1s;
+        background-color: $color_5;
+        box-shadow:1px 1px 2px $color_2, 0 0 25px $color_5, 0 0 5px $color_6;
+    }
+    &__button:hover:after {
+        background-color: $color_1;
+    }
+    &__button:active {
+        background-color: $color_6;
+    }
+    &__button:active:after {
+        background-color: $color_5;
+    }
+    &__ipad {
+        grid-row: 1;
+        grid-column: 0.3fr;
+        margin: 2em auto 0;
+    }
+    @media #{$media-type_1} and (min-width: $screen-md) {
+        @include width-height(80%);
+        justify-self: center;
+        align-self: center;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: 1;
+        &__info {
+            grid-row: 1;
+            grid-column: 1/8;
+        }
+        &__ipad {
+            grid-row: 1;
+            grid-column: 8/12;
+        }
+    }
+    @media #{$media-type_1} and (min-width: $screen-lg) {
+        padding: 4em 0 ;
+        &__info {
+            grid-row: 1;
+            grid-column: 2/8;
+        }
+        &__ipad {
+            grid-row: 1;
+            grid-column: 8/11;
+        }
+    }
+}
+// FOOTER
+.footer {
+    @include width-height(100%);
+    grid-area: footer;
 }

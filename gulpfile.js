@@ -28,8 +28,13 @@ gulp.task('sass', function () {
 
 gulp.task('image', function () {
     gulp.src('./src/assets/img/*')
-        .pipe(image())
+        // .pipe(image())
         .pipe(gulp.dest('./build/assets/img'));
+});
+
+gulp.task('font', function () {
+    gulp.src('./src/assets/fonts/*')
+        .pipe(gulp.dest('./build/assets/fonts'));
 });
 
 gulp.task('browserSync', function () {
@@ -65,10 +70,11 @@ gulp.task("clean", function () {
     return del(['build/index.html', 'build/styles/style.css']);
 });
 
-gulp.task('watch', ['sass', 'pug', 'autoprefixer', 'html', 'image', 'browserSync'], function () {
+gulp.task('watch', ['sass', 'pug', 'autoprefixer', 'html', 'image', 'font', 'browserSync'], function () {
     gulp.watch('./src/**/*.scss', ['sass']);
     gulp.watch('.src/**/*.scss', ['autoprefixer']);
     gulp.watch('./src/img/*', ['image']);
+    gulp.watch('./src/fonts/*', ['font']);
     gulp.watch('./src/**/*.html', ['html']);
     gulp.watch('./src/pages/**/*.pug', ['pug']);
     gulp.watch('build/*.html', browserSync.reload);
