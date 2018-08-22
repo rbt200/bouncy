@@ -89,7 +89,8 @@ body {
     }
     &__link {
         font: normal 1em 'Open Sans';
-        text-decoration: none;        
+        text-decoration: none;
+        color: $color_1;       
     }    
     &__middle {
         @include width-height(100%);
@@ -155,7 +156,6 @@ body {
         align-self: center;
     }
     &__title {
-        // font: 300 1.35em '$font_2';
         font: 300 '$font_2';
         color: $color_3;
     }
@@ -458,6 +458,9 @@ body {
             repeat: no-repeat;
         }       
     }
+    &__gallery-item:hover {
+        @include width-height(auto, 40em);
+    } 
     &__submit {
         padding-top: 2em;
         background-image: url(../assets/img/bg-features-submit2.jpg);
@@ -564,6 +567,111 @@ body {
         &__submit-title {
             display: inline;
             margin-right: 5em;
+        }
+    }
+}
+// SERVICES
+.services {
+    @include width-height(100%);
+    grid-area: services;
+    padding: 1em 0 0 0;
+    &__header {
+        @include width-height(90%);
+        margin: 0 auto;
+        text-align: center;
+    }
+    &__title {
+        font: lighter 1.3em $font_3;
+        color: $color_14;
+    }
+    &__subtitle {
+        font: normal 0.8em $font_3;
+        color: $color_8;
+    }
+    &__buttons-container {
+        @include width-height(90%);
+        padding: 1em 0;
+        margin: 0 auto;
+        text-align: center;
+    }
+    &__button {
+        @include width-height(3.437em, 3.437em);
+        outline: none;
+        background-color: $color_8;
+        border: {
+            radius: 10em;
+            width: 0;
+        }
+    }
+    @keyframes services-button {
+        0%   {background-color: $color_8;}
+        100%  {background-color: $color_9;}        
+    }
+    &__button:hover {
+        cursor: pointer;
+        animation-name: services-button;
+        animation-duration: 0.5s;
+        background-color: $color_9;
+        box-shadow:1px 1px 2px black, 0 0 25px $color_5, 0 0 5px $color_6;
+    }
+    &__button:hover:after {
+        background-color: $color_8;
+    }
+    // pressed
+    &__button:active {
+        background-color: $color_6;
+    }
+    // unpressed
+    &__button:active:after {
+        background-color: $color_8;
+    }
+    &__active_true {
+        background-color: $color_9;
+    }
+    &__button_icon_1 {
+        background-image: url(../assets/img/icon-services-plug.png);
+    }
+    &__button_icon_2 {
+        background-image: url(../assets/img/icon-services-joystick.png);
+    }
+    &__button_icon_3 {
+        background-image: url(../assets/img/icon-services-roller.png);
+    }
+    &__button_icon_4 {
+        background-image: url(../assets/img/icon-services-instrument.png);
+    }
+    &__content {
+        @include width-height(90%);
+        padding: 1em 0;
+        margin: 0 auto;
+    }
+    &__content-title {
+        font: normal 1.3em $font_3;
+        color: $color_14;
+        text-align: center;
+    }
+    &__content-text {
+        font: normal 1em $font_3;
+        color: $color_8;
+        text-align: left;
+    }
+    &_color_green {
+        color: $color_9;
+    }
+    &_color_black {
+        color: $color_10;
+    }
+    &_bold_true {
+        font-weight: bold;
+    }
+    &__chart-container {
+
+    }
+    &__chart-box {
+        @include width-height(7.875em, 7.875em);
+        background: {
+            image: url(../assets/img/icon-services-chart-0.png);
+            // color: $color_2;
         }
     }
 }
