@@ -109,12 +109,37 @@ body {
         color: $color_1;
     }
     &__button {
+        @include width-height(2.43em, 2.437em);
+        outline: none;
         background: {
-            url: url(../assets/img/icon-header-arrow.png);
+            image: url(../assets/img/icon-header-arrow.png);
+            color: $color_6;
         }
+        border: {
+            radius: 10em;
+            width: 0;
+            style: none;
+        }
+    }
+    @keyframes about-button {
+        0%   {background-color: $color_1;}
+        100%  {background-color: $color_5;}        
     }
     &__button:hover {
         cursor: pointer;
+        animation-name: about-button;
+        animation-duration: 1s;
+        background-color: $color_5;
+        box-shadow:1px 1px 2px $color_2, 0 0 25px $color_5, 0 0 5px $color_6;
+    }
+    &__button:hover:after {
+        background-color: $color_1;
+    }
+    &__button:active {
+        background-color: $color_6;
+    }
+    &__button:active:after {
+        background-color: $color_5;
     }
     @media #{$media-type_1} and (min-width: $screen-md) {
         &__upper {
@@ -299,6 +324,9 @@ body {
     &__bold_true {
         font-weight: bold;
     }
+    &__info-container_display_none {
+        display: none;
+    }
     &__info-title {
         font-family: $font_3;
         color: $color_3;
@@ -373,10 +401,10 @@ body {
 }
 // FEATURES
 .features {
-        @include width-height(100%, auto);
-        padding: 2em 0 0 0;
-        text-align: center;
-        &__title {
+    @include width-height(100%, auto);
+    padding: 2em 0 0 0;
+    text-align: center;
+    &__title {
         font: 300 1.35em $font_2;
         color: $color_3;
     }
@@ -385,16 +413,41 @@ body {
         font: normal 0.8em $font_3;
         color: $color_4;
     }
+    &__gallery {
+        @include width-height(auto, 20em);
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 3;
+    }
+    &__gallery-item {
+        @include width-height(90%);
+        //margin: 0.5em 0;   
+    }
+    &__whiskey {
+        grid-column: 1;
+        grid-row: 1; 
+    }
+    &__vintage {
+        grid-column: 1;
+        grid-row: 2; 
+    }
+    &__branding {
+        grid-column: 1;
+        grid-row: 3;  
+    }
+    &__submit {
+        padding-top: 2em;
+    }
     &__gallery-title {
         font: normal 1.3em $font_2;
         color: $color_1;
         z-index: 20;
     }
-    &__gallery-item {
-        @include width-height(auto, 20em);
-        margin: 0.5em 0;   
-        position: relative;       
-    }
+    // &__gallery-item {
+    //     @include width-height(auto, 20em);
+    //     // margin: 0.5em 0;   
+    //     position: relative;       
+    // }
     &__gallery-item:before {
         content: "";
         display: block;
@@ -459,12 +512,12 @@ body {
         }       
     }
     &__gallery-item:hover {
-        @include width-height(auto, 40em);
+        // @include width-height(auto, 40em);
     } 
     &__submit {
         padding-top: 2em;
-        background-image: url(../assets/img/bg-features-submit2.jpg);
         background: {
+            image: url(../assets/img/bg-features-submit2.jpg);
             size: cover;
             position: center center;
             repeat: no-repeat;

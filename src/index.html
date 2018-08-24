@@ -37,13 +37,15 @@
                         </div>                        
                     </div><!-- header__middle -->
                     <div class="header__lower">
-                        <a class="header__button"><img src="./assets/img/icon-header-arrow.png"></a>
+                        <a href="#about">
+                            <button class="header__button">
+                            </button>
+                        </a>
                     </div><!-- header__lower -->
                 </div><!-- header__container -->
             </header>
 
-            <div class="about">
-                <a name="about"></a>
+            <div class="about" id='about'>
                 <article class="about__info">
                     <h2 class="about__title">THIS IS BOUNCY</h2>
                     <p class="about__text">
@@ -59,7 +61,7 @@
                 <img class="about__ipad" src="./assets/img/img-about-ipad.png">
             </div><!-- about -->
 
-            <div class="details">
+            <div class="details" id="details">
 
                 <div class="details__container">
                     
@@ -72,15 +74,16 @@
                     </div><!--details__header -->
 
                     <div class="details__button-container">
-                        <button class="details__button details__button_bg_heart details__active_true"></button>
-                        <button class="details__button details__button_bg_mouse"></button>
-                        <button class="details__button details__button_bg_lamp"></button>
+                        <button class="details__button details__button_bg_heart details__active_true" id="btnHeart"></button>
+                        <button class="details__button details__button_bg_mouse" id="btnMouse"></button>
+                        <button class="details__button details__button_bg_lamp" id="btnLamp"></button>
                     </div><!-- ails__buttons-container -->
+                    <div id="details-content">
 
-                    <div class="details__info-container">
+                        <!-- <div class="details__info-container" id="detailsContainer1">
                         <h3 class="details__info-title">Creative Ideas</h3>
                         <p class="details__info-text details__info-1">
-                            At 
+                            At et accusamus et iusto odio dignissimos ducimus
                             <span class="details__color_green details__bold_true">vero</span>
                              eos et accusamus et iusto odio 
                             <span class="details__color_black details__bold_true">dignissimos</span> qui blanditiis praesentium voluptatum deleniti
@@ -95,8 +98,50 @@
                             <span class="details__color_black details__bold_true">similique</span> sunt in culpa qui officia deserunt mollitia
                                 animi, id est laborum et dolorum fuga. Et harum quidem r
                         </p>
-                    </div><!-- details__info-container -->
+                        </div>
 
+                        <div class="details__info-container" id="detailsContainer2">
+                        <h3 class="details__info-title">Beoynd Limits</h3>
+                        <p class="details__info-text details__info-1">
+                            At 
+                            <span class="details__color_green details__bold_true">vero</span>
+                             eos et accusamus et iusto odio 
+                            <span class="details__color_black details__bold_true">dignissimos</span> qui blanditiis praesentium voluptatum deleniti
+                              atque corrupti quos dolores et accusamus et iusto odio dignissimos ducimus
+                        </p>
+                        <p class="details__info-text details__info-2">
+                            At vero eos et accusamus et iusto odio dignissimos ducimus
+                             qui blanditiis praesentium voluptatum deleniti atque 
+                            <span class="details__color_black details__bold_true">orrupti quos</span>c dolores et quas molestias 
+                            <span class="details__color_green details__bold_true">excepturi</span> sint occaecati cupiditate
+                               non provident, 
+                            <span class="details__color_black details__bold_true">similique</span> sunt in culpa qui officia deserunt mollitia
+                                animi, id est laborum et dolorum fuga. Et harum quidem ret accusamus et iusto odio dignissimos ducimus
+                        </p>
+                        </div>
+
+                        <div class="details__info-container" id="detailsContainer3">
+                        <h3 class="details__info-title">Obssessed to create</h3>
+                        <p class="details__info-text details__info-1">
+                            At 
+                            <span class="details__color_green details__bold_true">vero</span>
+                             eos et accusamus et iusto odio 
+                            <span class="details__color_black details__bold_true">dignissimos</span> qui blanditiis praesentium voluptatum deleniti
+                              atque corrupti quos dolores 
+                        </p>
+                        <p class="details__info-text details__info-2">
+                            At vero eos et accusamus et iusto odio dignissimos ducimus
+                             qui blanditiis praesentium voluptatum deleniti atque 
+                            <span class="details__color_black details__bold_true">orrupti quos</span>c dolores et quas molestias 
+                            <span class="details__color_green details__bold_true">excepturi</span> sint occaecati cupiditate
+                               non provident, qui blanditiis praesentium voluptatum deleniti atque 
+                            <span class="details__color_black details__bold_true">similique</span> sunt in culpa qui officia deserunt mollitia
+                                animi, id est laborum et dolorum fuga. Et harum quidem r
+                        </p>
+                        </div> -->
+
+                    </div><!-- details__content-->
+                    
                 </div><!-- details__container -->
 
             </div><!-- details -->
@@ -138,8 +183,8 @@
                              et iusto odio dignissimos ducimus qui blanditiis 
                         </p>
                         <button class="features__button">
-                                Submit Now
-                            </button>
+                            Submit Now
+                        </button>
                     </div><!-- features__submit-container -->
                     
 
@@ -213,6 +258,8 @@
             </footer>
 
         </div><!-- wrapper -->
+
+        <script src="./scripts/script.js" async></script>
 
     </body>
 </html>

@@ -4,6 +4,7 @@ const pug = require('gulp-pug');
 const sass = require('gulp-sass');
 const image = require('gulp-image');
 const concat = require('gulp-concat');
+const uglify = require('gulp-uglify');
 const browserSync = require('browser-sync');
 const autoprefixer = require('gulp-autoprefixer');
 
@@ -36,6 +37,13 @@ gulp.task('font', function () {
     gulp.src('./src/assets/fonts/*')
         .pipe(gulp.dest('./build/assets/fonts'));
 });
+
+gulp.task('js', function() {
+    gulp.src('./src/scripts/*.js')
+    // .pipe(uglify())
+    .pipe(concat('script.js'))
+    .pipe(gulp.dest('./build/scripts/'))
+  });
 
 gulp.task('browserSync', function () {
     browserSync({
@@ -70,13 +78,18 @@ gulp.task("clean", function () {
     return del(['build/index.html', 'build/styles/style.css']);
 });
 
-gulp.task('watch', ['sass', 'pug', 'autoprefixer', 'html', 'image', 'font', 'browserSync'], function () {
+// gulp.task('clean', function() {
+//     return del.sync('dist'); // Delete folder before building
+// });
+
+gulp.task('watch', ['sass', 'pug', 'autoprefixer', 'html', 'image', 'font', 'js', 'browserSync'], function () {
     gulp.watch('./src/**/*.scss', ['sass']);
     gulp.watch('.src/**/*.scss', ['autoprefixer']);
     gulp.watch('./src/img/*', ['image']);
     gulp.watch('./src/fonts/*', ['font']);
     gulp.watch('./src/**/*.html', ['html']);
     gulp.watch('./src/pages/**/*.pug', ['pug']);
+    gulp.watch('./src/scripts/*', ['js']);
     gulp.watch('build/*.html', browserSync.reload);
     gulp.watch("./build/**/*.css").on("change", browserSync.reload);
     gulp.watch('./build/**/*.js').on("change", browserSync.reload);
