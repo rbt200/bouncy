@@ -2,6 +2,8 @@ window.onload = function() {
     defaultContent();
     slowScrolling();
     detailSlider();
+    addListener('features__gallery-item', 'mouseenter', increaseSizeFeature);
+    addListener('features__gallery-item', 'mouseleave', dicreaseSizeFeature);
 };
 
 const details = {
@@ -10,6 +12,51 @@ const details = {
     btnLamp: detailsContainer3
 };
 
+
+
+const dicreaseSizeFeature = function(e) {
+    // console.log(e.target.classList);
+    const media1 = window.matchMedia("(min-width: 768px)");
+    const media2 = window.matchMedia("(min-width: 1px)"); // .style.gridTemplateAreas = '"z z z" "a b c" "d e f"';
+    if(media1.matches) {
+        // console.log(e.target.parentNode);
+        // // e.target.parentNode.style.gridTemplateAreas = '"whiskey" "vintage" "branding"';
+        // e.target.classList.add('features__gallery__orientation_horizontal');
+        e.target.classList.remove('features__gallery-item_width_50');
+    } else if(media2.matches) {
+        // console.log(e.target);
+        e.target.classList.remove('features__gallery-item_height_30em');
+    }   
+}
+
+const increaseSizeFeature = function(e) {
+    // console.log(e.target.classList);    
+    const media1 = window.matchMedia("(min-width: 768px)");
+    const media2 = window.matchMedia("(min-width: 1px)");
+    if(media1.matches) {
+        e.target.parentNode.style.gridTemplateAreas = '"whiskey whiskey whiskey" "vintage" "branding"';
+        // e.target.classList.add('features__gallery_orientation_horizontal');
+        console.log(e.target.classList);
+        e.target.classList.add('features__gallery-item_width_50');
+    } else if(media2.matches) {        
+        e.target.classList.add('features__gallery-item_height_30em');
+    }
+}
+
+
+const addListener = function (myClass, action, myFunc) {
+    // get all elements with the same class
+    const elemArr = Array.from(document.getElementsByClassName(myClass));
+    // travers through the array
+    elemArr.forEach(item => {
+        item.addEventListener(action, function(event) {
+            // add function to the element
+            myFunc(event);
+        }, false); // prevent 
+    });
+};
+
+// add default content to the page
 const defaultContent = function() {
     document.getElementById('details-content').innerHTML = details.btnHeart();
 };
