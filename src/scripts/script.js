@@ -3,8 +3,8 @@ window.onload = function() {
     slowScrolling();
     textSlider('details-content', 'details__button', 'details__active_true');
     textSlider('services-content', 'services__button', 'services__active_true');
-    addListener('features__gallery-item', 'mouseenter', increaseSizeFeature);
-    addListener('features__gallery-item', 'mouseleave', dicreaseSizeFeature);
+    addListener('features__gallery-item', 'mouseenter', resizeContainer);
+    addListener('features__gallery-item', 'mouseleave', resizeContainer);
 };
 
 const details = {
@@ -17,25 +17,20 @@ const details = {
     btnRepair: getContent7,
 };
 
+// add default content to the page
+const defaultContent = function() {
+    document.getElementById('details-content').innerHTML = details.btnHeart();
+    document.getElementById('services-content').innerHTML = details.btnPlug();
+};
 
-
-const dicreaseSizeFeature = function(e) {
+const resizeContainer = function(e, action) {
     const media1 = window.matchMedia("(min-width: 768px)");
     const media2 = window.matchMedia("(min-width: 1px)");
+    const target = e.target.classList;
     if(media1.matches) {
-        e.target.classList.remove('features__gallery-item_width_50');
-    } else if(media2.matches) {
-        e.target.classList.remove('features__gallery-item_height_30em');
-    }   
-}
-
-const increaseSizeFeature = function(e) {  
-    const media1 = window.matchMedia("(min-width: 768px)");
-    const media2 = window.matchMedia("(min-width: 1px)");
-    if(media1.matches) {
-        e.target.classList.add('features__gallery-item_width_50');
+        action === 'mouseenter' ? target.add('features__gallery-item_width_50') : target.remove('features__gallery-item_width_50');
     } else if(media2.matches) {        
-        e.target.classList.add('features__gallery-item_height_30em');
+        action === 'mouseleave' ? target.remove('features__gallery-item_height_30em') : target.add('features__gallery-item_height_30em');
     }
 }
 
@@ -47,15 +42,9 @@ const addListener = function (myClass, action, myFunc) {
     elemArr.forEach(item => {
         item.addEventListener(action, function(event) {
             // add function to the element
-            myFunc(event);
+            myFunc(event, action);
         }, false); // prevent 
     });
-};
-
-// add default content to the page
-const defaultContent = function() {
-    document.getElementById('details-content').innerHTML = details.btnHeart();
-    document.getElementById('services-content').innerHTML = details.btnPlug();
 };
 
 function textSlider(container, button, activeClass) {
@@ -111,6 +100,27 @@ framesCount = 20;
 
 
 
+
+
+// const dicreaseSizeFeature = function(e) {
+//     const media1 = window.matchMedia("(min-width: 768px)");
+//     const media2 = window.matchMedia("(min-width: 1px)");
+//     if(media1.matches) {
+//         e.target.classList.remove('features__gallery-item_width_50');
+//     } else if(media2.matches) {
+//         e.target.classList.remove('features__gallery-item_height_30em');
+//     }   
+// }
+
+// const increaseSizeFeature = function(e) {  
+//     const media1 = window.matchMedia("(min-width: 768px)");
+//     const media2 = window.matchMedia("(min-width: 1px)");
+//     if(media1.matches) {
+//         e.target.classList.add('features__gallery-item_width_50');
+//     } else if(media2.matches) {        
+//         e.target.classList.add('features__gallery-item_height_30em');
+//     }
+// }
 
 // function listenDetailBtn() {
 //     const elemArr = Array.from(document.getElementsByClassName('details__button'));
