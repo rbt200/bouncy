@@ -160,3 +160,17 @@ const getContent7 = function() {
       deserunt mollitia et quas molestias excepturi sint animi, fuga. 
 </p>`;
 }
+const getContent8 = function() {
+    return `<div class="services__chart" id="services-chart1">                                
+    <div class="services__chart-box services__chart-box_img_60"></div>
+    <p class="services__chart-title">Branding</p>
+</div>
+<div class="services__chart" id="services-chart2">                                
+    <div class="services__chart-box services__chart-box_img_75"></div>
+    <p class="services__chart-title">Web Design</p>
+</div>
+<div class="services__chart" id="services-chart3">                                
+    <div class="services__chart-box services__chart-box_img_80"></div>
+    <p class="services__chart-title">UI/UX</p>
+</div>`;
+}

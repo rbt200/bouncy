@@ -622,7 +622,7 @@ body {
 .services {
     @include width-height(100%);
     grid-area: services;
-    padding: 1em 0 0 0;
+    padding: 1em 0 2em;
     &__header {
         @include width-height(90%);
         margin: 0 auto;
@@ -713,13 +713,102 @@ body {
         font-weight: bold;
     }
     &__chart-container {
-
+        @include display-flex(row, wrap, space-around, center);
+    }
+    &__chart {
+        text-align: center;
     }
     &__chart-box {
-        @include width-height(7.875em, 7.875em);
+        @include width-height(3.5em, 3.5em);//(7.875em, 7.875em);
+        margin: 0 auto;
         background: {
-            image: url(../assets/img/icon-services-chart-0.png);
-            // color: $color_2;
+            position: center center;
+            size: cover;
+        }
+    }
+    &__chart-box_img_60 {        
+        background-image: url(../assets/img/icon-services-60.svg);
+    }
+    &__chart-box_img_75 {        
+        background-image: url(../assets/img/icon-services-75.svg);
+    }
+    &__chart-box_img_80 {        
+        background-image: url(../assets/img/icon-services-80.svg);
+    }
+    &__chart-title {
+        font: normal 1em $font_3;
+        color: $color_8;
+        margin-top: 0.5em;
+    }
+    @media #{$media-type_1} and (min-width: $screen-sm) {
+        padding-bottom: 3em;
+        &__content {
+            @include width-height(70%);
+        }
+        &__chart-container {
+            @include display-flex(row, wrap, center, center);
+        }
+        &__chart {
+            margin-left: 2em;
+        }
+    }
+    @media #{$media-type_1} and (min-width: $screen-md) {
+        &__body {
+            display: grid;
+            grid-template-columns: repeat(4, 25%);
+            grid-template-areas:
+               "buttons content content charts";
+        }
+        &__buttons-container {
+            grid-area: buttons;
+            @include display-flex(column, nowrap, start, center);
+        }
+        &__content {
+            @include width-height(90%);
+            grid-area: content;
+        }
+        &__chart-container {
+            @include display-flex(column, nowrap, start, center);
+            grid-area: charts;
+            padding-top: 2em;            
+        }
+        &__button {
+            margin-top: 1em;
+        }
+    }
+    @media #{$media-type_1} and (min-width: $screen-xl) {
+        &__body {
+            display: grid;
+            grid-template-columns: 20% 30% 50% ;
+            grid-template-areas:
+               "buttons content charts";
+        }
+        &__buttons-container {
+            padding-top: 2em;
+        }
+        &__content {
+            margin: 0;
+            width: 90%;
+            text-align: left;
+        }
+        &__chart-container {
+            @include display-flex(row, nowrap, start, left);
+            grid-area: charts;
+            padding-top: 2em;            
+        }
+        &__chart-box {
+            @include width-height(7.875em, 7.875em);
+            margin: 0 auto;
+            background: {
+                position: center center;
+                size: cover;
+            }
+        }
+        &__content-title {
+            text-align: left;
+        }
+        &__button {
+            margin: 0.2em;
         }
     }
 }
