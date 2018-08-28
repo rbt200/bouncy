@@ -812,6 +812,91 @@ body {
         }
     }
 }
+// QUOTES
+.quotes {
+    @include width-height(100%);
+    background-color: $color_15;    
+    text-align: center;
+    &__container {
+        @include width-height(100%);
+        margin: 0 auto;
+        padding: 2em 0;
+        background: {
+            image: url(../assets/img/bg-quotes-man.png);
+            size: cover;
+            position: center center;
+        }
+    }
+    &__header {
+        @include width-height(100%);
+        margin: 0 auto;
+    }
+    &__title {
+        margin: 0;
+        font: 300 $font_2;
+        color: $color_7;
+    }
+    &__text, &__position, &__link {
+        font: normal 1em $font_3;
+        color: $color_16;
+    }
+    &__name {
+        font: bold 0.8em $font_3;
+        color: $color_16;
+    }
+    &__position {
+        margin: 0;
+    }
+    &__link {
+        text-decoration: none;
+        color: $color_9;
+    }
+    &__link:hover {
+        cursor: pointer;
+    }
+    &__monitor {
+        display: none;
+    }
+    @media #{$media-type_1} and (min-width: $screen-sm) {
+        &__header {
+            @include width-height(80%);
+        }
+        &__monitor {
+            @include width-height(409px, 328px);
+            margin: 1em auto;
+            display: block;
+            position: relative;
+            background: {
+                image: url(../assets/img/img-quote-monitor2.png);
+            }
+        }
+        &__monitor:hover {
+            background: {
+                image: url(../assets/img/img-quote-monitor2.png);
+                position: bottom;
+            }
+        }
+    }
+    @media #{$media-type_1} and (min-width: $screen-md) {
+        &__header {
+            @include width-height(60%);
+        }        
+    }
+    @media #{$media-type_1} and (min-width: $screen-xl) {
+        &__container {
+            @include width-height(90%, 25em);
+        }
+        &__header {
+            @include width-height(30%);
+            text-align: left;
+            margin: 3em;
+        }
+        &__monitor {
+            top: -20em;
+            left: 35.5em;
+        }     
+    }
+}
 // FOOTER
 .footer {
     @include width-height(100%);
