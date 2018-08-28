@@ -5,6 +5,7 @@ window.onload = function() {
     textSlider('services-content', 'services__button', 'services__active_true');
     addListener('features__gallery-item', 'mouseenter', resizeContainer);
     addListener('features__gallery-item', 'mouseleave', resizeContainer);
+    console.log(getImgSize(document.getElementById("portfolio-img")).width);
 };
 
 const details = {
@@ -16,6 +17,16 @@ const details = {
     btnWork: getContent6,
     btnRepair: getContent7,
 };
+const placeContainer = function() {
+    const elem = document.getElementById("portfolio__inner");
+    const height = getImgSize(document.getElementById("portfolio-img")).height;
+    elem.style.height = height/16
+}
+const getImgSize = function(img) {
+    var i = new Image();
+    i.src = img.src;
+    return { width: i.width, height: i.height };
+}
 
 // add default content to the page
 const defaultContent = function() {

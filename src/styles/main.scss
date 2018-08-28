@@ -897,6 +897,258 @@ body {
         }     
     }
 }
+// PORTFOLIO
+.portfolio {
+    @include width-height(100%);
+    background-color: $color_17;    
+    &__container {
+        @include width-height(90%);
+        margin: 0 auto;
+        padding: 2em 0;
+    }
+    &__header {
+        @include width-height(90%);
+        margin: 0 auto;
+    }
+    &__title {
+        font: 300 1.35em $font_2;
+        color: $color_3;
+        text-align: center;
+    }
+    &__subtitle {
+        font: normal 0.85em $font_3;
+        color: $color_4;
+        text-align: center;
+    }
+    &__nav {
+
+    }
+    &__nav-ul {
+        list-style: none;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+    }    
+    &__nav-li {
+        padding: 0.5em 0;
+    }
+    &__nav-link_state_active {
+        text-decoration: underline;
+        text-decoration-color: $color_6;
+    }
+    &__nav-li:first-child:after {
+        content: ""; 
+        display: block;
+        margin: 0 auto;
+        width: 10%;
+        border-bottom: 0.1em solid $color_6;
+    }
+    &__nav-li:hover {
+        background-color: $color_16;
+    }
+    &__nav-li:hover {
+        cursor: pointer;        
+    }
+    &__nav-link {
+        font: normal 1em $font_3;
+        color: $color_18;
+        text-decoration: none;
+        text-decoration-style: none;
+        
+    }
+    &__gallery {
+        padding: 1em 0;
+        margin-bottom: 1em;
+    }
+    &__gallery-container {
+        margin-bottom: 1em;
+        background: {
+                size: cover;
+                position: center center;
+                repeat: no-repeat;
+            }            
+    }
+    &__gallery-img-1 {
+        @include width-height(100%, 23.625em);//(276px, 378px);
+        background-image: url(../assets/img/img-gallery-4.png);
+    }
+    &__gallery-img-2 {
+        @include width-height(100%, 25.937em);//(278px, 415px)
+        background-image: url(../assets/img/img-gallery-8.png);
+    }
+    &__gallery-img-3 {
+        @include width-height(100%, 13.375em);//(319px, 214px)
+        background-image: url(../assets/img/img-gallery-12.png);
+    }
+    &__gallery-img-4 {
+        @include width-height(100%, 14.5em);//(436px, 232px);
+        background-image: url(../assets/img/img-gallery-3.png);
+    }
+    &__gallery-img-5 {
+        @include width-height(100%, 21.937em);//(468px, 351px)
+        background-image: url(../assets/img/img-gallery-6.png);
+    }
+    &__gallery-img-6 {
+        @include width-height(100%, 22.625em);//(474px, 362px)
+        background-image: url(../assets/img/img-gallery-7.png);
+    }
+    &__gallery-img-7 {
+        @include width-height(100%, 19.062em);//(411px, 305px)
+        background-image: url(../assets/img/img-gallery-2.png);
+    }
+    &__gallery-img-8 {
+        @include width-height(100%, 27.5em);//(277px, 165px)
+        background-image: url(../assets/img/img-gallery-7.png);
+    }
+    &__gallery-img-9 {
+        @include width-height(100%, 27.5em);//(277px, 165px)
+        background-image: url(../assets/img/img-gallery-10.png);
+    }
+    &__gallery-img-10 {
+        @include width-height(100%, 23.375em);//(500px, 374px)
+        background-image: url(../assets/img/img-gallery-1.png);
+    }
+    &__gallery-img-11 {
+        @include width-height(100%, 16.5em);//(327px, 264px)
+        background-image: url(../assets/img/img-gallery-5.png);
+    }
+    &__gallery-img-12 {
+        @include width-height(100%, 19.187em);//(390px, 307px)
+        background-image: url(../assets/img/img-gallery-9.png);
+    }
+    &__gallery-content {
+        @include width-height(100%, 100%);
+        visibility: hidden;
+        background-color: $color_2;
+        opacity: 0.8;
+    }
+    &__gallery-container:hover &__gallery-content {        
+        visibility: visible;
+    }
+    &__gallery-innerbox {
+        @include width-height(70%);
+        @include display-flex(column, nowrap, center, left);
+        margin: 0 auto;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    &__gallery-title {
+        font: 300 1.3em $font_2;
+        color: $color_9;
+    }
+    &__gallery-title:after {
+        content: ""; 
+        display: block;
+        width: 25%;
+        padding-top: 1em;
+        border-bottom: 1px solid $color_9;
+    }
+    &__gallery-subtitle {
+        font: normal 1em $font_3;
+        color: $color_16;
+    }
+    &__start {
+        background: {
+            image: url(../assets/img/bg-gallery-start.png);
+            size: cover;
+            position: center center;
+        }
+    }
+    &__submit {
+        padding-top: 2em;
+        background: {
+            image: url(../assets/img/bg-features-submit2.jpg);
+            size: cover;
+            position: center center;
+            repeat: no-repeat;
+        } 
+    }
+    &__submit-container {
+        text-align: center;
+    }
+    &__submit-title {
+        @include width-height(90%);
+        margin: 0 auto;
+    }
+    &__submit-title {
+        font: normal 1em $font_3;
+        color: $color_12;
+        text-align: center;
+    }
+    &__button {
+        font: normal 1em $font_3;
+        color: $color_12;
+        margin: 1em 0 2em;
+        padding: 0.7em 2em;
+        background-color: transparent;
+        border: {
+            style: solid;
+            width: 0.05em;
+            color: $color_12;
+            radius: 10em;
+        }
+        outline: none;
+    }
+    &__theme_white {
+        font: normal 1.3em $font_3;
+        color: $color_1;
+    }
+    @keyframes features-button {
+        0%   {background-color: $color_1;}
+        100%  {background-color: $color_5;}        
+    }
+    &__button:hover {
+        cursor: pointer;
+        animation-name: features-button;
+        animation-duration: 1s;
+        background-color: $color_5;
+        box-shadow:1px 1px 2px black, 0 0 25px $color_5, 0 0 5px $color_6;
+    }
+    // return original background
+    &__button:hover:after {
+        background-color: $color_1;
+    }
+    // pressed down
+    &__button:active {
+        background-color: $color_11;
+    }
+    // unpressed
+    &__button:active:after {
+        background-color: $color_11;
+    }
+    @media #{$media-type_1} and (min-width: $screen-sm) {
+        &__nav-ul {
+            @include display-flex(row, wrap, space-around, center);
+        }
+        &__nav-li:first-child:after {
+            content: ""; 
+            display: block;
+            margin: 0 auto;
+            width: 100%;
+            border-bottom: 0.1em solid $color_6;
+        }      
+        &__gallery {
+            column-count: 2;
+            margin-bottom: 1em;
+        }
+    }
+    @media #{$media-type_1} and (min-width: $screen-md) {
+        &__nav-ul {
+            @include display-flex(row, wrap, center, center);
+        }
+        &__nav-li {
+            margin: 0 1em;
+        }
+        &__gallery {
+            column-count: 3;
+        }
+    }
+    @media #{$media-type_1} and (min-width: $screen-lg) {
+        &__gallery {
+            column-count: 4;
+        }
+    }
+}
 // FOOTER
 .footer {
     @include width-height(100%);
