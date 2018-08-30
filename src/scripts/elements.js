@@ -174,3 +174,168 @@ const getContent8 = function() {
     <p class="services__chart-title">UI/UX</p>
 </div>`;
 }
+const getContent9 = function() {
+    return `<div class="team__slider">
+
+    <div class="team__slider-img team__slider-img_image_1">
+        <div class="team__content-upper">
+            <div class="team__social">
+                <a href="" title="instagramm" class="team__content-link">
+                    <img src="./assets/img/icon-team-instagram.png">
+                </a>
+                <a href="" title="tweeter" class="team__content-link">
+                    <img src="./assets/img/icon-team-tweeter.png">
+                </a>
+                <a href="" title="facebook" class="team__content-link">
+                    <img src="./assets/img/icon-team-facebook.png">
+                </a>
+            </div><!-- team__social -->
+        </div><!-- team__content-upper -->
+    </div><!-- team__slider-img -->
+
+    <div class="team__slider-info">
+        <div class="team__info-upper">
+            <p class="team__info-name">
+                Abdullah Noman
+            </p>
+            <p class="team__info-position">
+                Executive Director, Code Cafe
+            </p>
+        </div><!-- team__info-upper -->
+        <div class="team__info-middle">
+            <p class="team__info-discription">
+                At vero eos et accusamus et iusto odio dignissimos
+                 ducimus qui blanditiis praesentium
+            </p>
+        </div><!-- team__info-middle -->
+        <div class="team__info-lower">
+            <div class="team__chart">
+                <span class="team__chart-name">BRANDING</span>
+                <div class="team__graph-line"></div>
+                <span class="team__chart-percent">80%</span>                                    
+            </div>
+            <div class="team__chart">
+                <p class="team__chart-name">WEB DESIGN</p>
+                <div class="team__graph-line"></div>
+                <span class="team__chart-percent">65%</span>                                        
+            </div>
+            <div class="team__chart">
+                <span class="team__chart-name">USER INTERFACE</span>
+                <div class="team__graph-line"></div>
+                <span class="team__chart-percent">70%</span>                                        
+            </div>
+        </div><!-- team__info-lower -->
+    </div><!-- team__slider-info -->
+
+</div><!-- team__slider -->`;
+}
+const getContent10 = function() {
+    return `<div class="team__slider">
+
+    <div class="team__slider-img team__slider-img_image_3">
+        <div class="team__content-upper">
+            <div class="team__social">
+                <a href="" title="instagramm" class="team__content-link">
+                    <img src="./assets/img/icon-team-instagram.png">
+                </a>
+                <a href="" title="tweeter" class="team__content-link">
+                    <img src="./assets/img/icon-team-tweeter.png">
+                </a>
+                <a href="" title="facebook" class="team__content-link">
+                    <img src="./assets/img/icon-team-facebook.png">
+                </a>
+            </div><!-- team__social -->
+        </div><!-- team__content-upper -->
+    </div><!-- team__slider-img -->
+
+    <div class="team__slider-info">
+        <div class="team__info-upper">
+            <p class="team__info-name">
+                Patric Quecy
+            </p>
+            <p class="team__info-position">
+                Software Designer, Code Cafe
+            </p>
+        </div><!-- team__info-upper -->
+        <div class="team__info-middle">
+            <p class="team__info-discription">
+                At vero eos et accusamus et iusto odio dignissimos
+                 ducimus qui blanditiis praesentium
+            </p>
+        </div><!-- team__info-middle -->
+        <div class="team__info-lower">
+            <div class="team__chart">
+                <span class="team__chart-name">BRANDING2</span>
+                <div class="team__graph-line"></div>
+                <span class="team__chart-percent">80%</span>                                    
+            </div>
+            <div class="team__chart">
+                <p class="team__chart-name">WEB DESIGN2</p>
+                <div class="team__graph-line"></div>
+                <span class="team__chart-percent">65%</span>                                        
+            </div>
+            <div class="team__chart">
+                <span class="team__chart-name">USER INTERFACE2</span>
+                <div class="team__graph-line"></div>
+                <span class="team__chart-percent">70%</span>                                        
+            </div>
+        </div><!-- team__info-lower -->
+    </div><!-- team__slider-info -->
+
+</div><!-- team__slider -->`;
+}
+const getContent11 = function() {
+    return `<div class="team__slider">
+
+    <div class="team__slider-img team__slider-img_image_2">
+        <div class="team__content-upper">
+            <div class="team__social">
+                <a href="" title="instagramm" class="team__content-link">
+                    <img src="./assets/img/icon-team-instagram.png">
+                </a>
+                <a href="" title="tweeter" class="team__content-link">
+                    <img src="./assets/img/icon-team-tweeter.png">
+                </a>
+                <a href="" title="facebook" class="team__content-link">
+                    <img src="./assets/img/icon-team-facebook.png">
+                </a>
+            </div><!-- team__social -->
+        </div><!-- team__content-upper -->
+    </div><!-- team__slider-img -->
+
+    <div class="team__slider-info">
+        <div class="team__info-upper">
+            <p class="team__info-name">
+                Barbara Kopeland
+            </p>
+            <p class="team__info-position">
+                Chief Manager, Code Cafe
+            </p>
+        </div><!-- team__info-upper -->
+        <div class="team__info-middle">
+            <p class="team__info-discription">
+                At vero eos et accusamus et iusto odio dignissimos
+                 ducimus qui blanditiis praesentium
+            </p>
+        </div><!-- team__info-middle -->
+        <div class="team__info-lower">
+            <div class="team__chart">
+                <span class="team__chart-name">BRANDING3</span>
+                <div class="team__graph-line"></div>
+                <span class="team__chart-percent">80%</span>                                    
+            </div>
+            <div class="team__chart">
+                <p class="team__chart-name">WEB DESIGN3</p>
+                <div class="team__graph-line"></div>
+                <span class="team__chart-percent">65%</span>                                        
+            </div>
+            <div class="team__chart">
+                <span class="team__chart-name">USER INTERFACE4</span>
+                <div class="team__graph-line"></div>
+                <span class="team__chart-percent">70%</span>                                        
+            </div>
+        </div><!-- team__info-lower -->
+    </div><!-- team__slider-info -->
+
+</div><!-- team__slider -->`;
+}

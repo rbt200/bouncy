@@ -5,7 +5,10 @@ window.onload = function() {
     textSlider('services-content', 'services__button', 'services__active_true');
     addListener('features__gallery-item', 'mouseenter', resizeContainer);
     addListener('features__gallery-item', 'mouseleave', resizeContainer);
-    console.log(getImgSize(document.getElementById("portfolio-img")).width);
+    addListener('team__content-upper', 'mouseenter', overlayElement);
+    addListener('team__content-upper', 'mouseleave', overlayElement);
+    addListener('team__button', 'click', slideTeam, teamSliderData);
+    
 };
 
 const details = {
@@ -16,11 +19,69 @@ const details = {
     btnPlay: getContent5,
     btnWork: getContent6,
     btnRepair: getContent7,
+    teamSlider1: getContent9,
+    teamSlider2: getContent10,
+    teamSlider2: getContent11,
 };
+const teamSliderData = {
+    rdbtnClass: 'team__button',
+    srcChecked: "../assets/img/icon-team-radio-checked.png",
+    src: "../assets/img/icon-team-radio.png",
+    teamSlider1: getContent9,
+    teamSlider2: getContent10,
+    teamSlider3: getContent11,
+}
+
+const teamChartData = {
+    teamSlider1: ['chart__inner_width_70', 'chart__inner_width_90', 'chart__inner_width_30'],
+    teamSlider2: ['chart__inner_width_50', 'chart__inner_width_35', 'chart__inner_width_90'],
+    teamSlider3: ['chart__inner_width_90', 'chart__inner_width_90', 'chart__inner_width_30']
+}
+
+const getChart = function(charData = teamChartData['teamSlider1']) {
+    const charts = Array.from(document.getElementsByClassName("team__graph-line"));
+    charts.forEach((item, index) => {
+        const html = `
+            <div class="chart">
+                <div class="chart__inner ${charData[index]}"></div>
+            </div>
+            `;
+        item.innerHTML = html;
+    });
+}
+
+// change apperance of a slider's buttons
+const switchSlider = function(dataObj) {
+        const buttons = Array.from(document.getElementsByClassName(dataObj.rdbtnClass));
+        buttons.forEach(item => item.src = dataObj.src);
+        event.target.src = dataObj.srcChecked;
+        return event.target.id;
+}
+
+// change content of the team block slider
+const slideTeam = function(event, action, dataObj) {
+    switchSlider(dataObj);
+    document.getElementById("team-body").innerHTML = dataObj[event.target.id]();
+    addListener('team__content-upper', 'mouseenter', overlayElement);
+    addListener('team__content-upper', 'mouseleave', overlayElement);
+    getChart(teamChartData[event.target.id]);
+}
+
+const overlayElement = function(event, action) {
+    switch (action) {
+        case "mouseenter": event.target.classList.add('element_opacity_05');
+            break;
+            case "mouseleave": event.target.classList.remove('element_opacity_05');
+            break;
+        default:
+            break;
+    }  
+}
+
 const placeContainer = function() {
     const elem = document.getElementById("portfolio__inner");
     const height = getImgSize(document.getElementById("portfolio-img")).height;
-    elem.style.height = height/16
+    elem.style.height = height/16;
 }
 const getImgSize = function(img) {
     var i = new Image();
@@ -32,6 +93,8 @@ const getImgSize = function(img) {
 const defaultContent = function() {
     document.getElementById('details-content').innerHTML = details.btnHeart();
     document.getElementById('services-content').innerHTML = details.btnPlug();
+    document.getElementById('team-body').innerHTML = details.teamSlider1();
+    getChart();
 };
 
 const resizeContainer = function(e, action) {
@@ -46,14 +109,14 @@ const resizeContainer = function(e, action) {
 }
 
 
-const addListener = function (myClass, action, myFunc) {
+const addListener = function (myClass, action, myFunc, dataObj) {
     // get all elements with the same class
     const elemArr = Array.from(document.getElementsByClassName(myClass));
     // travers through the array
     elemArr.forEach(item => {
         item.addEventListener(action, function(event) {
             // add function to the element
-            myFunc(event, action);
+            myFunc(event, action, dataObj);
         }, false); // prevent 
     });
 };

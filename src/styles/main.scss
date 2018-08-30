@@ -920,9 +920,6 @@ body {
         color: $color_4;
         text-align: center;
     }
-    &__nav {
-
-    }
     &__nav-ul {
         list-style: none;
         text-align: center;
@@ -1126,7 +1123,10 @@ body {
             margin: 0 auto;
             width: 100%;
             border-bottom: 0.1em solid $color_6;
-        }      
+        }
+        &__nav-li:hover {
+            background-color: transparent;
+        }
         &__gallery {
             column-count: 2;
             margin-bottom: 1em;
@@ -1149,8 +1149,150 @@ body {
         }
     }
 }
+// TEAM
+.team {
+    @include width-height(100%);
+    background-color: $color_1;    
+    &__container {
+        @include width-height(100%);
+        margin: 0 auto;
+        padding: 2em 0;
+    }
+    &__header {
+        @include width-height(90%);
+        margin: 0 auto;
+    }
+    &__header-title {
+        font: 300 1.35em $font_2;
+        color: $color_14;
+        text-align: center;
+    }
+    &__header-subtitle {
+        font: normal 0.85em $font_3;
+        color: $color_8;
+        text-align: center;
+    }
+    &__slider-img {
+        @include width-height(100%, 22.75em);//(17.812em, 22.75em);
+        background: {
+            position: center center;
+            size: cover;
+            repeat: no-repeat;
+        }
+    }
+    &__slider-img_image_1 {
+        background-image: url(../assets/img/img-team-man-1.png);
+    }
+    &__slider-img_image_2 {
+        background-image: url(../assets/img/img-team-man-2.png);
+    }
+    &__slider-img_image_3 {
+        background-image: url(../assets/img/img-team-man-3.png);
+    }
+    &__content-upper {
+        @include width-height(100%);
+        @include display-flex(row, wrap, center, center);
+        opacity: 0;
+        background-color: $color_19;
+        border: solid 0.8em rgba($color: $color_20, $alpha: 0.9);
+    }
+    &__content-link {
+        text-decoration: none;
+    }
+    &__content-link:hover {
+        cursor: pointer;
+    }
+    &__slider-info {
+        @include width-height(90%);//(27em);
+        margin: 0 auto;
+    }
+    &__info-name {
+        font: normal 1.35em $font_3;
+        color: $color_21;
+        text-align: center;
+        margin-bottom: 0;
+    }
+    &__info-position {
+        font: italic 300 0.85em $font_2;
+        color: $color_8;
+        text-align: center;
+        margin-top: 0;
+    }
+    &__info-discription {
+        font: 300 0.85em $font_2;
+        color: $color_8;
+        text-align: center;
+    }
+    &__chart {
+        @include width-height(100%);
+        @include display-flex(row, nowrap, space-between, center);
+        margin: 0 auto;
+    }
+    &__chart-name, &__chart-percent {
+        font: 300 1em $font_2;
+        color: $color_8;
+        padding: 0 0.2em;    
+    }
+    &__graph-line {
+        @include width-height(100%);
+        border: none;
+        border-bottom: 0.2em solid $color_16;
+    }    
+    &__button-container {
+        @include width-height(100%);
+        @include display-flex(row, nowrap, center, center);
+        padding: 1em 0;
+    }
+    &__button {
+        margin: 0.5em;
+    }
+    &__button:hover {
+        cursor: pointer;
+    }
+
+}
 // FOOTER
 .footer {
     @include width-height(100%);
     grid-area: footer;
+}
+
+//
+.element_opacity_05 {
+    opacity: 0.5;
+}
+
+.chart {
+    @include width-height(inherit, 0.2em);
+    position: relative;
+    background: {
+        color: $color_16;
+    }
+    &__inner {
+        @include width-height(0%, 0.4em);
+        position: relative;
+        top: 0;
+        left: 0;
+        background: {
+            color: $color_6;
+        }
+    }
+    &__inner_width_30 {
+        @include width-height(30%, 0.4em);
+    }
+    &__inner_width_35 {
+        @include width-height(35%, 0.4em);
+    }
+    &__inner_width_50 {
+        @include width-height(50%, 0.4em);
+    }
+    &__inner_width_70 {
+        @include width-height(70%, 0.4em);
+    }
+    &__inner_width_75 {
+        @include width-height(75%, 0.4em);
+    }
+    &__inner_width_90 {
+        @include width-height(90%, 0.4em);
+    }    
 }
