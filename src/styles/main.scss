@@ -1173,7 +1173,7 @@ body {
         text-align: center;
     }
     &__slider-img {
-        @include width-height(17.812em, 22.75em);//(100%, 22.75em);
+        @include width-height(17em, 22.75em);//(100%, 22.75em);
         margin: 0 auto;
         background: {
             position: center center;
@@ -1249,6 +1249,15 @@ body {
     }
     &__button:hover {
         cursor: pointer;
+    }
+    &__footer {
+        @include width-height(100%, 12.625em);
+        @include display-flex(column, nowrap, center, center);
+        background: linear-gradient( rgba(255, 255, 255, 0.9), rgba(0, 0, 0, 0.9) ), url('../assets/img/bg-team-contact.png');
+    }
+    &__footer-title {
+        font: normal 1.35em $font_3;
+        color: $color_1;
     }
     @media #{$media-type_1} and (min-width: $screen-sm) {
         &__container {
