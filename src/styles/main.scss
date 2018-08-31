@@ -1391,15 +1391,12 @@ body {
             @include width-height(70%);
         }
     }
-    @media #{$media-type_1} and (min-width: $screen-md) {
+    @media #{$media-type_1} and (min-width: $screen-md) {        
         &__body, &__header {
-            @include width-height(40%);
-        }
-    }
-    @media #{$media-type_1} and (min-width: $screen-md) {
-        &__body {
             @include width-height(80%);
-            padding: 5em 5em 2em 5em;
+        }
+        &__body {
+            padding: 1em 1em 1em 1em;
         }
         &__slider {
             @include display-flex(row, nowrap, space-around, center);
@@ -1409,11 +1406,52 @@ body {
             margin-right: 0;
         }
     }
+    @media #{$media-type_1} and (min-width: $screen-lg) {             
+        &__body {
+            padding: 5em 5em 2em 5em;
+        }        
+    }
+}
+// MAP
+.map {
+    @include width-height(100%, 30em);
+    @include display-flex(row, nowrap, center, center);
+    background: {
+        image: url(../assets/img/bg-map-map.png);
+        position: center;
+        repeat: no-repeat;
+        size: cover;
+    }
 }
 // FOOTER
 .footer {
     @include width-height(100%);
-    grid-area: footer;
+    // grid-area: footer;
+    background-color: $color_17;
+    &__container {
+        padding-bottom: 3em;
+    }  
+    &__social {
+        @include display-flex(row, nowrap, center, center);
+        margin: 2em 0;
+    }
+    &__social-link {
+        text-decoration: none;
+        opacity: 0.8;
+    }
+    &__social-link:hover {
+        opacity: 1;
+    }
+    &__company-name {
+        font: 900 1.5em $font_4;
+        color: $color_26;
+        text-align: center;
+    }
+    &__copyright {
+        font: normal 0.85em $font_3;
+        color: $color_26;
+        text-align: center;
+    }
 }
 
 //
@@ -1454,4 +1492,15 @@ body {
     &__inner_width_90 {
         @include width-height(90%, 0.4em);
     }    
+}
+
+.fadein, .fadeout {
+    opacity: 0;
+    -moz-transition: opacity 0.4s ease-in-out;
+    -o-transition: opacity 0.4s ease-in-out;
+    -webkit-transition: opacity 0.4s ease-in-out;
+    transition: opacity 0.4s ease-in-out;
+}
+.fadein {
+    opacity: 1;
 }
