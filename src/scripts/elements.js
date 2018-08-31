@@ -339,3 +339,67 @@ const getContent11 = function() {
 
 </div><!-- team__slider -->`;
 }
+const getContent12 = function() {
+    return `<div class="testimonials__slider">
+    <div class="testimonials__slider-img testimonials__slider-img_image_1"></div>
+    <div class="testimonials__slider-content">
+        <p class="testimonials__slider-text">
+            At vero eos et accusamus et iusto odio dignissimos
+             ducimus qui blanditiis praesentium voluptatum deleniti
+              atque corrupti quos dolores et quas molestias excepturi
+               sint occaecati cupiditate non provident, similique sunt
+                in culpa qui officia deserunt mollitia.
+        </p>
+        <p class="testimonials__slider-name">
+            PARSO
+        </p>
+        <p class="testimonials__slider-position">
+            FOUNDER, ARTWAYS BD
+        </p>
+    </div><!-- testimonials__slider-content -->
+</div><!-- testimonials__slider -->`;
+}
+const getContent13 = function() {
+    return `<div class="testimonials__slider">
+    <div class="testimonials__slider-img testimonials__slider-img_image_2"></div>
+    <div class="testimonials__slider-content">
+        <p class="testimonials__slider-text">
+            At vero eos et accusamus et iusto odio dignissimos
+             ducimus qui blanditiis praesentium voluptatum deleniti
+              atque corrupti quos dolores et quas molestias excepturi
+               sint occaecati cupiditate non provident, similique sunt
+                in culpa qui officia deserunt mollitia.et accusamus et iusto odio dignissimos
+                ducimus qui blanditiis praesentium voluptatum deleniti
+                 atque corrupti quos dolores et quas molestias
+        </p>
+        <p class="testimonials__slider-name">
+            PABLO
+        </p>
+        <p class="testimonials__slider-position">
+            COFOUNDER, ARTWAYS BD
+        </p>
+    </div><!-- testimonials__slider-content -->
+</div><!-- testimonials__slider -->`;
+}
+const getContent14 = function() {
+    return `<div class="testimonials__slider">
+    <div class="testimonials__slider-img testimonials__slider-img_image_3"></div>
+    <div class="testimonials__slider-content">
+        <p class="testimonials__slider-text">
+            At vero eos et accusamus et iusto odio dignissimos
+             ducimus qui blanditiis praesentium voluptatum deleniti
+              atque corrupti quos dolores et quas molestias excepturi
+               sint occaecati cupiditate non provident, similique sunt
+                in culpa qui officia deserunt mollitia. quas molestias excepturi
+                sint occaecati cupiditate non provident, similique sunt
+                 in culpa qui officia deserunt
+        </p>
+        <p class="testimonials__slider-name">
+            TEREZA
+        </p>
+        <p class="testimonials__slider-position">
+            ART DIRECTOR, ARTWAYS BD
+        </p>
+    </div><!-- testimonials__slider-content -->
+</div><!-- testimonials__slider -->`;
+}

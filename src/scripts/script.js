@@ -7,7 +7,8 @@ window.onload = function() {
     addListener('features__gallery-item', 'mouseleave', resizeContainer);
     addListener('team__content-upper', 'mouseenter', overlayElement);
     addListener('team__content-upper', 'mouseleave', overlayElement);
-    addListener('team__button', 'click', slideTeam, teamSliderData);    
+    addListener('team__button', 'click', slideTeam, teamSliderData);
+    addListener('testimonials__button', 'click', slideTestimonial, testimonialSliderData);
 };
 
 const details = {
@@ -19,9 +20,16 @@ const details = {
     btnWork: getContent6,
     btnRepair: getContent7,
     teamSlider1: getContent9,
-    teamSlider2: getContent10,
-    teamSlider2: getContent11,
+    testimonialSlider1: getContent12,
 };
+const testimonialSliderData = {
+    rdbtnClass: 'testimonials__button',
+    srcChecked: "../assets/img/icon-team-radio-checked.png",
+    src: "../assets/img/icon-team-radio.png",
+    testimonialSlider1: getContent12,
+    testimonialSlider2: getContent13,
+    testimonialSlider3: getContent14,
+}
 const teamSliderData = {
     rdbtnClass: 'team__button',
     srcChecked: "../assets/img/icon-team-radio-checked.png",
@@ -52,13 +60,12 @@ const getChart = function(charData = teamChartData['teamSlider1']) {
 const getPercent = function(charData = teamChartData['teamSlider1']) {    
     const percents = Array.from(document.getElementsByClassName("team__chart-percent"));
     percents.forEach((item, index) => {
-        console.log(charData[index].slice(19));
         item.innerHTML = charData[index].slice(19) + '%';
     });
 }
 
 // change apperance of a slider's buttons
-const switchSlider = function(dataObj) {
+const switchSlider = function(dataObj) {   
         const buttons = Array.from(document.getElementsByClassName(dataObj.rdbtnClass));
         buttons.forEach(item => item.src = dataObj.src);
         event.target.src = dataObj.srcChecked;
@@ -66,7 +73,12 @@ const switchSlider = function(dataObj) {
 }
 
 // change content of the team block slider
-const slideTeam = function(event, action, dataObj) {
+const slideTestimonial = function(event, action, dataObj) {
+    switchSlider(dataObj);
+    document.getElementById("testimonials-body").innerHTML = dataObj[event.target.id]();
+}
+// change content of the team block slider
+const slideTeam = function(event, action, dataObj) {    
     switchSlider(dataObj);
     document.getElementById("team-body").innerHTML = dataObj[event.target.id]();
     addListener('team__content-upper', 'mouseenter', overlayElement);
@@ -102,6 +114,7 @@ const defaultContent = function() {
     document.getElementById('details-content').innerHTML = details.btnHeart();
     document.getElementById('services-content').innerHTML = details.btnPlug();
     document.getElementById('team-body').innerHTML = details.teamSlider1();
+    document.getElementById('testimonials-body').innerHTML = details.testimonialSlider1();
     getChart();
     getPercent();
 };

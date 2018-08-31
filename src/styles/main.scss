@@ -1308,6 +1308,108 @@ body {
         }
     }
 }
+// TESTIMONIALS
+.testimonials {
+    @include width-height(100%);
+    background-color: $color_17;
+    padding: 2em 0 3em;
+    &__header {
+        @include width-height(80%);
+        margin: 0 auto;
+    }
+    &__title {
+        font: 300 1.35em $font_2;
+        color: $color_23;
+        text-align: center;
+    }
+    &__subtitle {
+        font: normal 0.85em $font_3;
+        color: $color_22;
+        text-align: center;
+    }
+    &__body {
+        @include width-height(80%);
+        @include display-flex(column, nowrap, center, center);
+        margin: 0 auto;
+        background-color: $color_1;
+        padding: 1em 0 ;//3.625em 0;
+    }
+    &__slider {
+        @include display-flex(column, nowrap, center, center);
+    }
+    &__slider-buttons {
+        margin: 0 auto;
+        padding-top: 1em;
+    }
+    &__slider-img {
+        @include width-height(8.125em, 8.125em);
+        background-image: url(../assets/img/img-testimonials-face-1.png);
+    }
+    &__slider-content {
+        @include width-height(90%);
+        margin: 0 auto;
+    }
+    &__slider-text {
+        font: normal 0.85em $font_3;
+        color: $color_24;
+        text-align: left;
+    }
+    &__slider-name {
+        font: bold 0.85em $font_3;
+        color: $color_9;
+        text-align: left;
+        margin: 0;
+    }
+    &__slider-position {
+        font: normal 0.85em $font_3;
+        color: $color_25;
+        text-align: left;
+        margin: 0;
+    }
+    &__button-container {
+        @include width-height(100%);
+        @include display-flex(row, nowrap, center, center);
+        padding: 1em 0;
+    }
+    &__button {
+        margin: 0.5em;
+    }
+    &__button:hover {
+        cursor: pointer;
+    }
+    &__slider-img_image_1 {
+        background-image: url(../assets/img/img-testimonials-face-1.png);
+    }
+    &__slider-img_image_2 {
+        background-image: url(../assets/img/img-testimonials-face-2.png);
+    }
+    &__slider-img_image_3 {
+        background-image: url(../assets/img/img-testimonials-face-3.png);
+    }
+    @media #{$media-type_1} and (min-width: $screen-sm) {
+        &__body, &__header {
+            @include width-height(70%);
+        }
+    }
+    @media #{$media-type_1} and (min-width: $screen-md) {
+        &__body, &__header {
+            @include width-height(40%);
+        }
+    }
+    @media #{$media-type_1} and (min-width: $screen-md) {
+        &__body {
+            @include width-height(80%);
+            padding: 5em 5em 2em 5em;
+        }
+        &__slider {
+            @include display-flex(row, nowrap, space-around, center);
+        }
+        &__slider-content {
+            @include width-height(70%);
+            margin-right: 0;
+        }
+    }
+}
 // FOOTER
 .footer {
     @include width-height(100%);
