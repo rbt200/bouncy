@@ -7,8 +7,7 @@ window.onload = function() {
     addListener('features__gallery-item', 'mouseleave', resizeContainer);
     addListener('team__content-upper', 'mouseenter', overlayElement);
     addListener('team__content-upper', 'mouseleave', overlayElement);
-    addListener('team__button', 'click', slideTeam, teamSliderData);
-    
+    addListener('team__button', 'click', slideTeam, teamSliderData);    
 };
 
 const details = {
@@ -49,6 +48,14 @@ const getChart = function(charData = teamChartData['teamSlider1']) {
         item.innerHTML = html;
     });
 }
+// inject percent figure into html
+const getPercent = function(charData = teamChartData['teamSlider1']) {    
+    const percents = Array.from(document.getElementsByClassName("team__chart-percent"));
+    percents.forEach((item, index) => {
+        console.log(charData[index].slice(19));
+        item.innerHTML = charData[index].slice(19) + '%';
+    });
+}
 
 // change apperance of a slider's buttons
 const switchSlider = function(dataObj) {
@@ -65,6 +72,7 @@ const slideTeam = function(event, action, dataObj) {
     addListener('team__content-upper', 'mouseenter', overlayElement);
     addListener('team__content-upper', 'mouseleave', overlayElement);
     getChart(teamChartData[event.target.id]);
+    getPercent(teamChartData[event.target.id]);
 }
 
 const overlayElement = function(event, action) {
@@ -95,6 +103,7 @@ const defaultContent = function() {
     document.getElementById('services-content').innerHTML = details.btnPlug();
     document.getElementById('team-body').innerHTML = details.teamSlider1();
     getChart();
+    getPercent();
 };
 
 const resizeContainer = function(e, action) {

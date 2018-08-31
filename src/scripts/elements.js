@@ -212,17 +212,17 @@ const getContent9 = function() {
             <div class="team__chart">
                 <span class="team__chart-name">BRANDING</span>
                 <div class="team__graph-line"></div>
-                <span class="team__chart-percent">80%</span>                                    
+                <span class="team__chart-percent"></span>                                    
             </div>
             <div class="team__chart">
                 <p class="team__chart-name">WEB DESIGN</p>
                 <div class="team__graph-line"></div>
-                <span class="team__chart-percent">65%</span>                                        
+                <span class="team__chart-percent"></span>                                        
             </div>
             <div class="team__chart">
                 <span class="team__chart-name">USER INTERFACE</span>
                 <div class="team__graph-line"></div>
-                <span class="team__chart-percent">70%</span>                                        
+                <span class="team__chart-percent"></span>                                        
             </div>
         </div><!-- team__info-lower -->
     </div><!-- team__slider-info -->
@@ -265,19 +265,19 @@ const getContent10 = function() {
         </div><!-- team__info-middle -->
         <div class="team__info-lower">
             <div class="team__chart">
-                <span class="team__chart-name">BRANDING2</span>
+                <span class="team__chart-name">BRANDING</span>
                 <div class="team__graph-line"></div>
-                <span class="team__chart-percent">80%</span>                                    
+                <span class="team__chart-percent"></span>                                    
             </div>
             <div class="team__chart">
-                <p class="team__chart-name">WEB DESIGN2</p>
+                <p class="team__chart-name">WEB DESIGN</p>
                 <div class="team__graph-line"></div>
-                <span class="team__chart-percent">65%</span>                                        
+                <span class="team__chart-percent"></span>                                        
             </div>
             <div class="team__chart">
-                <span class="team__chart-name">USER INTERFACE2</span>
+                <span class="team__chart-name">USER INTERFACE</span>
                 <div class="team__graph-line"></div>
-                <span class="team__chart-percent">70%</span>                                        
+                <span class="team__chart-percent"></span>                                        
             </div>
         </div><!-- team__info-lower -->
     </div><!-- team__slider-info -->
@@ -320,19 +320,19 @@ const getContent11 = function() {
         </div><!-- team__info-middle -->
         <div class="team__info-lower">
             <div class="team__chart">
-                <span class="team__chart-name">BRANDING3</span>
+                <span class="team__chart-name">BRANDING</span>
                 <div class="team__graph-line"></div>
-                <span class="team__chart-percent">80%</span>                                    
+                <span class="team__chart-percent"></span>                                    
             </div>
             <div class="team__chart">
-                <p class="team__chart-name">WEB DESIGN3</p>
+                <p class="team__chart-name">WEB DESIGN</p>
                 <div class="team__graph-line"></div>
-                <span class="team__chart-percent">65%</span>                                        
+                <span class="team__chart-percent"></span>                                        
             </div>
             <div class="team__chart">
-                <span class="team__chart-name">USER INTERFACE4</span>
+                <span class="team__chart-name">USER INTERFACE</span>
                 <div class="team__graph-line"></div>
-                <span class="team__chart-percent">70%</span>                                        
+                <span class="team__chart-percent"></span>                                        
             </div>
         </div><!-- team__info-lower -->
     </div><!-- team__slider-info -->

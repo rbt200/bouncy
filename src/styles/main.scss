@@ -1173,7 +1173,8 @@ body {
         text-align: center;
     }
     &__slider-img {
-        @include width-height(100%, 22.75em);//(17.812em, 22.75em);
+        @include width-height(17.812em, 22.75em);//(100%, 22.75em);
+        margin: 0 auto;
         background: {
             position: center center;
             size: cover;
@@ -1249,7 +1250,54 @@ body {
     &__button:hover {
         cursor: pointer;
     }
+    @media #{$media-type_1} and (min-width: $screen-sm) {
+        &__container {
+            @include width-height(80%);
+        }
+    }
+    @media #{$media-type_1} and (min-width: $screen-md) {
+        &__container {
+            @include width-height(60%);
+        }
+    }
+    @media #{$media-type_1} and (min-width: $screen-lg) {
+        &__container {
+            @include width-height(90%);
+        }
+        &__slider {
+            @include width-height(100%);
+            @include display-flex(row, nowrap, space-between, center);
 
+        }
+        &__slider-img {
+            margin-left: 0;
+        }
+        &__slider-info {
+            @include width-height(40%);
+            margin-right: 0;
+        }
+        &__info-name, &__info-position, &__info-discription {
+            text-align: right;
+        }
+        &__info-lower {
+            @include width-height(80%);
+            margin-left: 6em;
+        }
+        &__chart {
+            @include width-height(90%);
+        }
+        &__chart-name {
+            @include width-height(60%);
+        }
+    }
+    @media #{$media-type_1} and (min-width: $screen-xl) {
+        &__chart-name {
+            @include width-height(100%);
+        }
+        &__info-lower {
+            margin-left: 8em;
+        }
+    }
 }
 // FOOTER
 .footer {
