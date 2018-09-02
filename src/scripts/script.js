@@ -11,6 +11,8 @@ window.onload = function() {
     addListener('testimonials__button', 'click', slideTestimonial, testimonialSliderData);
     addListener('map__button', 'click', displayMap, mapData);
     addListener('blog__button', 'click', slideBlog, blogSliderData);
+    addListener('price__content', 'mouseenter', priceUp);
+    addListener('price__content', 'mouseleave', priceDown);
 };
 
 const details = {
@@ -49,6 +51,16 @@ const teamChartData = {
 const mapData = {
     classSearch: '.map__curtain',    
 };
+const priceData = {
+    priceSlider1: getContent18,
+    priceSlider2: getContent19,
+    priceSlider3: getContent20,    
+}
+const priceInfo = {
+    priceSlider1: getContent21,
+    priceSlider2: getContent22,
+    priceSlider3: getContent23,    
+}
 const blogSliderData = {
     rdbtnClass: 'blog__button',
     srcChecked: "../assets/img/icon-blog-button-checked.png",
@@ -57,8 +69,35 @@ const blogSliderData = {
     blogSlider2: getContent16,
     blogSlider3: getContent17,
 }
+// const temp = {
+//     elem: ''
+// };
+// change the places of the price__content element
+// const priceUpsidedown = function(event, action, dataObj) {
+//     if(action === 'mouseenter') {
+//         // temp.elem = JSON.parse(JSON.stringify(event.target.children[1].innerHTML));
+//         event.target.children[1].innerHTML = dataObj[event.target.id]();
+//     } else if(action === 'mouseleave') {
+//         event.target.children[1].innerHTML = priceInfo[event.target.id]();
+//         // temp.elem = '';
+//     }
+// }
+// const initPrice = function() {
+//     const arrHtml = Array.from(document.getElementsByClassName('price__content-lower'));
+//     arrHtml.forEach((item, index) => {
+//         item.innerHTML = priceInfo['priceSlider' + (index + 1)]();
+//     });
+// }
+const priceUp = function(event) {
+        event.target.children[1].innerHTML = priceData[event.target.id]();
+        event.target.classList.add('price__content_reverse_true');
+}
+const priceDown = function(event) {
+        event.target.children[1].innerHTML = priceInfo[event.target.id]();
+        event.target.classList.remove('price__content_reverse_true');
+}
 const slideBlog = function(event, action, dataObj) {
-    switchSlider(dataObj);
+    switchSlider(dataObj)
     document.getElementById("blog-slider").innerHTML = dataObj[event.target.id]();
 }
 const displayMap = function(event, action, dataObj) {

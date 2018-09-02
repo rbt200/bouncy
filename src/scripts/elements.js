@@ -490,3 +490,64 @@ const getContent17 = function() {
     </p>
 </div>`;
 }
+const getContent18 = function() {
+    return `<div class="price__hidden-content">
+        <p class="price__hidden-text">Full Branching</p>
+        <p class="price__hidden-text">Project Managment</p>
+        <p class="price__hidden-text">Unlimited Revisions</p>
+        <p class="price__hidden-text">24/7 h Support</p>
+    </div>`;
+}
+const getContent19 = function() {
+    return `<div class="price__hidden-content">
+        <p class="price__hidden-text">Full Branching</p>
+        <p class="price__hidden-text">Project Managment</p>
+        <p class="price__hidden-text">Unlimited Revisions</p>
+    </div>`;
+}
+const getContent20 = function() {
+    return `<div class="price__hidden-content">
+        <p class="price__hidden-text">Full Branching</p>
+        <p class="price__hidden-text">Project Managment</p>
+        <p class="price__hidden-text">Unlimited Revisions</p>
+        <p class="price__hidden-text">24/7 h Support</p>
+        <p class="price__hidden-text">Free Domain</p>
+        <p class="price__hidden-text">Free Hosting</p>
+    </div>`;
+}
+const getContent21 = function() {
+    return `
+    <div>
+        <img src="./assets/img/icon-price-dollar.png">
+        <p class="price__content-dollar">
+            60
+        </p>
+    </div>                                
+    <p class="price__content-period">
+        Per Month
+    </p>`;
+}
+const getContent22 = function() {
+    return `
+    <div>
+        <img src="./assets/img/icon-price-dollar.png">
+        <p class="price__content-dollar">
+            40
+        </p>
+    </div>                                
+    <p class="price__content-period">
+        Per Month
+    </p>`;
+}
+const getContent23 = function() {
+    return `
+    <div>
+        <img src="./assets/img/icon-price-dollar.png">
+        <p class="price__content-dollar">
+            80
+        </p>
+    </div>                                
+    <p class="price__content-period">
+        Per Month
+    </p>`;
+}

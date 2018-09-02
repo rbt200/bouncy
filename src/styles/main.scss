@@ -1519,6 +1519,86 @@ body {
         }
     }
 }
+// PRICE
+.price {
+    @include width-height(100%);
+    background-color: $color_17;
+    padding: 4em 0;
+    &__header {
+        @include width-height(90%);
+        margin: 0 auto;
+        padding-bottom: 2em;
+    }
+    &__header-title {
+        @include width-height(100%);
+        color: $color_31;
+        text-align: center;
+        font: 300 1.35em $font_2;
+    }
+    &__header-subtitle {
+        @include width-height(100%);
+        color: $color_4;
+        text-align: center;
+        font: normal 0.85em $font_3;
+    }
+    &__content {
+        @include width-height(14.687em, 18.937em);
+        @include display-flex(column, nowrap, center, center);
+        margin: 1em auto;
+        background-color: $color_22;
+    }
+    &__content_reverse_true {
+        @include display-flex(column-reverse, nowrap, center, center);
+    }
+    &__content-upper {
+        @include width-height(inherit, 4.187em);
+        @include display-flex(row, nowrap, center, center);
+        background-color: $color_32;
+    }
+    &__content-lower {
+        @include width-height(100%, 15em);
+        @include display-flex(column, nowrap, center, center);
+        background-color: $color_1;
+    }
+    &__content-plan {        
+        font: bold 1.35em $font_3;
+        color: $color_1;
+        text-align: center;
+        margin: 0;
+    }
+    &__content-dollar {
+        display: inline;
+        font: bold 2.8em $font_2;
+        color: $color_32;
+        
+    }
+    &__content-period {
+        margin: 0;
+        font: normal 1.35em $font_3;
+        color: $color_33;
+    }
+    &__hidden-text {
+        font: normal 0.85em $font_3;
+        color: $color_33;
+    }
+    @media #{$media-type_1} and (min-width: $screen-md) {
+        &__body-container {
+            @include width-height(100%);
+            margin: 0 auto;
+            @include display-flex(row, nowrap, center, center);
+        }
+    }
+    @media #{$media-type_1} and (min-width: $screen-lg) {
+        &__body-container {
+            @include width-height(80%);
+        }
+    }
+    @media #{$media-type_1} and (min-width: $screen-xl) {
+        &__body-container {
+            @include width-height(60%);
+        }
+    }
+}
 // MAP
 .map {
     @include width-height(100%, 30em);
