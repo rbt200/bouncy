@@ -9,6 +9,7 @@ window.onload = function() {
     addListener('team__content-upper', 'mouseleave', overlayElement);
     addListener('team__button', 'click', slideTeam, teamSliderData);
     addListener('testimonials__button', 'click', slideTestimonial, testimonialSliderData);
+    addListener('map__button', 'click', displayMap, mapData);
 };
 
 const details = {
@@ -38,13 +39,33 @@ const teamSliderData = {
     teamSlider2: getContent10,
     teamSlider3: getContent11,
 }
-
 const teamChartData = {
     teamSlider1: ['chart__inner_width_70', 'chart__inner_width_90', 'chart__inner_width_30'],
     teamSlider2: ['chart__inner_width_50', 'chart__inner_width_35', 'chart__inner_width_90'],
     teamSlider3: ['chart__inner_width_90', 'chart__inner_width_90', 'chart__inner_width_30']
 }
-
+const mapData = {
+    classSearch: '.map__curtain',    
+};
+const displayMap = function(event, action, dataObj) {
+    if(fadeIn(dataObj.classSearch)) {        
+        setTimeout(function(){ 
+            const el2 = document.querySelector(".map__container");
+        el2.classList.add('element_visibility_visible');
+         }, 1000);
+    }    
+}
+// fade an element in (the element is searched by the unique class)
+const fadeIn = function(classSearch) {
+    try {
+        const el = document.querySelector(classSearch);
+        el.classList.remove('is-paused');
+        return true;
+    } catch (error) {
+        return false;
+    }       
+}
+//
 const getChart = function(charData = teamChartData['teamSlider1']) {
     const charts = Array.from(document.getElementsByClassName("team__graph-line"));
     charts.forEach((item, index) => {
@@ -193,122 +214,3 @@ framesCount = 20;
         });
     });
 }
-
-
-
-
-
-// const dicreaseSizeFeature = function(e) {
-//     const media1 = window.matchMedia("(min-width: 768px)");
-//     const media2 = window.matchMedia("(min-width: 1px)");
-//     if(media1.matches) {
-//         e.target.classList.remove('features__gallery-item_width_50');
-//     } else if(media2.matches) {
-//         e.target.classList.remove('features__gallery-item_height_30em');
-//     }   
-// }
-
-// const increaseSizeFeature = function(e) {  
-//     const media1 = window.matchMedia("(min-width: 768px)");
-//     const media2 = window.matchMedia("(min-width: 1px)");
-//     if(media1.matches) {
-//         e.target.classList.add('features__gallery-item_width_50');
-//     } else if(media2.matches) {        
-//         e.target.classList.add('features__gallery-item_height_30em');
-//     }
-// }
-
-// function listenDetailBtn() {
-//     const elemArr = Array.from(document.getElementsByClassName('details__button'));
-//     elemArr.forEach(item => {
-//         item.addEventListener('click', function (event) {
-//             // if (!event.target.classList.contains('details__button')) return;
-//             Array.from(event.target.parentNode.children).forEach(function(item){
-//                 item.classList.remove(classActive);
-//             });
-//             event.target.classList.add(classActive);
-//         }, false);
-//     });
-        
-// }
-
-// function makeActive(classSearch, classActive) {
-//     const elemArr = Array.from(document.getElementsByClassName(classSearch));
-//     elemArr.forEach(item => {
-//         item.classList.remove(classActive);
-//     });
-// }
-
-
-// add event listener to table
-// var el = document.getElementById("outside");
-// el.addEventListener("click", modifyText, false);
-
-// function displayNone(className) {
-//     const elementArr = document.getElementsByClassName(className);
-//     Array.from(elementArr).forEach(item => item.style.display = "none");
-// }
-
-// function removeClass(className, rmClass) {
-//     const elementArr = document.getElementsByClassName(className);
-//     Array.from(elementArr).filter(item => {
-//         if(item.classList.contains(rmClass)) {
-//             item.classList.remove(rmClass)
-//         }
-//     });
-// }
-
-// function makeActive(classSearch, classActive) {
-//     document.addEventListener('click', function (event) {
-//     	if (!event.target.classList.contains(classSearch)) return;
-//         Array.from(event.target.parentNode.children).forEach(function(item){
-//             item.classList.remove(classActive);
-//         });
-//         event.target.classList.add(classActive);
-//     }, false);
-// }
-
-// var classname = document.getElementsByClassName("classname");
-
-// var myFunction = function() {
-//     var attribute = this.getAttribute("data-myattribute");
-//     alert(attribute);
-// };
-
-// for (var i = 0; i < classname.length; i++) {
-//     classname[i].addEventListener('click', myFunction, false);
-// }
-///////////////////////////////////////////////////////////////////////////
-
-////////////////////////////////////////////////////////////////////////////
-// // Listen to all clicks on the document
-// document.addEventListener('click', function (event) {
-
-// 	// If the event target doesn't match bail
-// 	if (!event.target.classList.contains('details__button')) return;
-
-//     // Otherwise, run your code...
-//     alert(event.target.classList);
-
-// }, false);
-////////////////////////////////////////////////////////////////////////////
-
-// const removeActiveState = function() {
-
-// }
-
-// const addListener = function (myClass, myFunc) {
-//         // Listen to all clicks on the document
-//     document.addEventListener('click', function (event) {
-
-//     	// If the event target doesn't match bail
-//     	if (!event.target.classList.contains(myClass)) return;
-
-//         // Otherwise, run your code...
-//         myFunc(event.target.classList);
-
-//     }, false);
-// };
-
-
-

@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link href="./styles/style.css"  rel="stylesheet">
-        <title>Bouncy</title>
+        <title>Bouncy</title>        
     </head>
     <body>
 
@@ -454,7 +454,15 @@
             </div><!-- testimonials -->
 
             <div class="map">
-                
+                <div class="map__curtain fade-in is-paused">
+                    <div class="map__curtain-content">
+                        <p class="map__curtain-text">
+                            FIND US ON MAP
+                        </p>
+                        <div class="map__button"></div>
+                    </div>                                
+                </div>
+                <div class="map__container" id="map"></div>    
             </div><!-- map -->
             
             <footer class="footer">
@@ -484,6 +492,6 @@
         </div><!-- wrapper -->
 
         <script src="./scripts/script.js" async></script>
-
+        <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
     </body>
 </html>
