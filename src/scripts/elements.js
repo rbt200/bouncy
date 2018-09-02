@@ -403,3 +403,90 @@ const getContent14 = function() {
     </div><!-- testimonials__slider-content -->
 </div><!-- testimonials__slider -->`;
 }
+const getContent15 = function() {
+    return `<div class="blog__slider-text">
+    <p class="blog__slider-header">
+        The trending Landing Pages
+    </p>
+    <p class="blog__slider-author">
+        BY
+        <a class="blog__author-link" href=""> KABIR UDDIN</a>
+    </p>
+    <p class="blog__slider-comments">
+        6950 Likes - 243 Comments - 703 shares
+    </p>
+    <p class="blog__author-text">
+        At vero eos et accusamus et iusto odio dignissimos
+         ducimus qui blanditiis praesentium voluptatum deleniti
+          atque corrupti quos dolores et quas molestias excepturi
+           sint occaecati cupiditate non provident, similique sunt
+            in culpa qui officia deserunt mollitia animi, id est laborum
+             et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio...  
+    </p>
+    <p  class="blog__read-more">
+        <a class="blog__read-link" href="" title="Read More">+ </a>
+        READ MORE
+    </p>
+</div>`;
+}
+const getContent16 = function() {
+    return `<div class="blog__slider-text">
+    <p class="blog__slider-header">
+        The trending Landing Pages
+    </p>
+    <p class="blog__slider-author">
+        BY
+        <a class="blog__author-link" href=""> JANE TAHRIR</a>
+    </p>
+    <p class="blog__slider-comments">
+        3540 Likes - 291 Comments - 928 shares
+    </p>
+    <p class="blog__author-text">
+        At vero eos et accusamus et iusto odio dignissimos
+         ducimus qui blanditiis praesentium voluptatum deleniti
+          atque corrupti quos dolores et quas molestias excepturi
+           sint occaecati cupiditate non provident, similique sunt
+            in culpa qui officia deserunt mollitia animi, id est laborum
+             et dolorum fuga. Et harum quidem rerum facilis est et expeditaducimus
+              qui blanditiis praesentium voluptatum deleniti
+             atque corrupti quos dolores et quas molestias excepturi
+              sint occaecati cupiditate non provident, similique sunt distinctio...  
+    </p>
+    <p  class="blog__read-more">
+        <a class="blog__read-link" href="" title="Read More">+ </a>
+        READ MORE
+    </p>
+</div>`;
+}
+const getContent17 = function() {
+    return `<div class="blog__slider-text">
+    <p class="blog__slider-header">
+        The trending Landing Pages
+    </p>
+    <p class="blog__slider-author">
+        BY
+        <a class="blog__author-link" href="">JOHN DEER</a>
+    </p>
+    <p class="blog__slider-comments">
+        8937 Likes - 381 Comments - 982 shares
+    </p>
+    <p class="blog__author-text">
+        At vero eos et accusamus et iusto odio dignissimos
+         ducimus qui blanditiis praesentium voluptatum deleniti
+          atque corrupti quos dolores et quas molestias excepturi
+           sint occaecati cupiditate non provident, similique sunt
+            in culpa qui officia deserunt mollitia animi, id est laborum
+             et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.
+             At vero eos et accusamus et iusto odio dignissimos
+         ducimus qui blanditiis praesentium voluptatum deleniti
+          atque corrupti quos dolores et quas molestias excepturi
+           sint occaecati cupiditate non provident, similique sunt
+            in culpa qui officia deserunt mollitia animi, id est laborum
+             et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio...
+    </p>
+    <p  class="blog__read-more">
+        <a class="blog__read-link" href="" title="Read More">+ </a>
+        READ MORE
+    </p>
+</div>`;
+}

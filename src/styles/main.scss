@@ -29,7 +29,7 @@ body {
      "portfolio"
      "project"
      "team"
-     "textimonials"
+     "testimonials"
      "blog"
      "price"
      "subscribe"
@@ -1412,6 +1412,113 @@ body {
         }        
     }
 }
+// BLOG
+.blog {
+    @include width-height(100%);//, 50.25em);
+    padding: 1em 0;
+    background: {
+        image: url(../assets/img/bg-blog.jpg);
+        size: cover;
+        position: center;
+        repeat: no-repeat;
+    }    
+    &__container {
+        @include width-height(90%);
+        margin: 0 auto;
+    }
+    &__title {
+        font: 300 1.35em $font_2;
+        color: $color_1;
+        text-align: center;
+    }
+    &__subtitle {
+        font: normal 0.85em $font_3;
+        color: $color_28;
+        text-align: center;
+    }
+    &__body {
+        @include width-height(100%);//, 30em);
+    }
+    &__slider {
+        @include width-height(100%);
+    }
+    &__slider-header {
+        font: normal 1.35 $font_3;
+        color:$color_1;
+    }
+    &__slider-author {
+        font: 300 0.85em $font_2;
+        color:$color_28;
+    }
+    &__author-link {
+        text-decoration: none;
+        color: $color_6;
+        font-style: italic;
+    }
+    &__slider-comments {
+        font: 300 0.85em $font_2;
+        color: $color_29;
+    }
+    &__author-text {
+        font: normal 0.85em $font_3;
+        color: $color_8;
+    }
+    &__read-link {
+        color: $color_30;
+        text-decoration: none;
+    }
+    &__read-more {
+        font: normal 1em $font_3;
+        color: $color_30;
+    }
+    &__button-container {
+        text-align: center;
+    }
+    &__button {
+    }
+    &__button:hover {
+        cursor: pointer;
+    }
+    @media #{$media-type_1} and (min-width: $screen-sm) {
+        &__container {
+            @include width-height(70%);
+        }
+    }
+    @media #{$media-type_1} and (min-width: $screen-md) {
+        &__container {
+            @include width-height(80%);
+        }
+        &__body {
+            @include display-flex(row-reverse, wrap, space-between, center);
+        }
+        &__slider {
+            @include width-height(80%);
+        }
+        &__button-container {
+            @include display-flex(column, wrap, center, center);
+        }
+        &__button {
+            margin: 0.5em;
+        }
+    }
+    @media #{$media-type_1} and (min-width: $screen-lg) {
+        &__body {
+            @include width-height(100%, 20em);
+        }
+        &__button-container {
+            align-self: start;
+            padding-top: 3em;
+        }
+        &__button {
+            margin: 0.2em;
+        }
+    }
+    @media #{$media-type_1} and (min-width: $screen-xl) {
+        &__slider-text {
+            @include width-height(70%);
+        }
+    }
+}
 // MAP
 .map {
     @include width-height(100%, 30em);
@@ -1474,8 +1581,7 @@ body {
     // unpressed
     &__button:active:after {
         background-color: $color_5;
-    }
-    
+    }    
 }
 // FOOTER
 .footer {

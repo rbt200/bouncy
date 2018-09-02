@@ -10,6 +10,7 @@ window.onload = function() {
     addListener('team__button', 'click', slideTeam, teamSliderData);
     addListener('testimonials__button', 'click', slideTestimonial, testimonialSliderData);
     addListener('map__button', 'click', displayMap, mapData);
+    addListener('blog__button', 'click', slideBlog, blogSliderData);
 };
 
 const details = {
@@ -22,6 +23,7 @@ const details = {
     btnRepair: getContent7,
     teamSlider1: getContent9,
     testimonialSlider1: getContent12,
+    blogSlider1: getContent15,
 };
 const testimonialSliderData = {
     rdbtnClass: 'testimonials__button',
@@ -47,6 +49,18 @@ const teamChartData = {
 const mapData = {
     classSearch: '.map__curtain',    
 };
+const blogSliderData = {
+    rdbtnClass: 'blog__button',
+    srcChecked: "../assets/img/icon-blog-button-checked.png",
+    src: "../assets/img/icon-blog-button.png",
+    blogSlider1: getContent15,
+    blogSlider2: getContent16,
+    blogSlider3: getContent17,
+}
+const slideBlog = function(event, action, dataObj) {
+    switchSlider(dataObj);
+    document.getElementById("blog-slider").innerHTML = dataObj[event.target.id]();
+}
 const displayMap = function(event, action, dataObj) {
     if(fadeIn(dataObj.classSearch)) {        
         setTimeout(function(){ 
@@ -136,6 +150,7 @@ const defaultContent = function() {
     document.getElementById('services-content').innerHTML = details.btnPlug();
     document.getElementById('team-body').innerHTML = details.teamSlider1();
     document.getElementById('testimonials-body').innerHTML = details.testimonialSlider1();
+    document.getElementById('blog-slider').innerHTML = details.blogSlider1();
     getChart();
     getPercent();
 };
@@ -171,7 +186,6 @@ function textSlider(container, button, activeClass) {
             item.classList.remove(activeClass);
         });
         event.target.classList.add(activeClass);
-        console.log(event.target.id);
         document.getElementById(container).innerHTML = details[event.target.id]();
     }, false);
 };
