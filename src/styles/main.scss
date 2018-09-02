@@ -1514,6 +1514,20 @@ body {
         }
     }
     @media #{$media-type_1} and (min-width: $screen-xl) {
+        padding: 3em 0 1em;
+        &__header {
+            @include width-height(30%);
+        }
+        &__title, &__subtitle {
+            text-align: left;
+        }
+        &__body {
+            @include width-height(100%);
+            @include display-flex(row-reverse, wrap, end, center);       
+        }
+        &__slider {
+            @include width-height(90%, 20em);
+        }
         &__slider-text {
             @include width-height(70%);
         }
