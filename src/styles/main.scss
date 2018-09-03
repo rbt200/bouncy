@@ -49,6 +49,7 @@ body {
 .header {
     @include width-height(100%);
     @include display-flex(row, nowrap, center, center);
+    @include animateButton();
     grid-area: header;
     background: {
         image: url(../assets/img/bg-header.png);
@@ -121,26 +122,7 @@ body {
             style: none;
         }
     }
-    @keyframes about-button {
-        0%   {background-color: $color_1;}
-        100%  {background-color: $color_5;}        
-    }
-    &__button:hover {
-        cursor: pointer;
-        animation-name: about-button;
-        animation-duration: 1s;
-        background-color: $color_5;
-        box-shadow:1px 1px 2px $color_2, 0 0 25px $color_5, 0 0 5px $color_6;
-    }
-    &__button:hover:after {
-        background-color: $color_1;
-    }
-    &__button:active {
-        background-color: $color_6;
-    }
-    &__button:active:after {
-        background-color: $color_5;
-    }
+ 
     @media #{$media-type_1} and (min-width: $screen-md) {
         &__upper {
             @include display-flex(row, wrap, space-between, center);
@@ -166,6 +148,7 @@ body {
 // ABOUT
 .about {
     @include width-height(100%);
+    @include animateButton();
     grid-area: about;
     display: grid;
     grid-template-columns: 1fr;
@@ -199,27 +182,7 @@ body {
             radius: 10em;
         }
         outline: none;
-    }
-    @keyframes about-button {
-        0%   {background-color: $color_1;}
-        100%  {background-color: $color_5;}        
-    }
-    &__button:hover {
-        cursor: pointer;
-        animation-name: about-button;
-        animation-duration: 1s;
-        background-color: $color_5;
-        box-shadow:1px 1px 2px $color_2, 0 0 25px $color_5, 0 0 5px $color_6;
-    }
-    &__button:hover:after {
-        background-color: $color_1;
-    }
-    &__button:active {
-        background-color: $color_6;
-    }
-    &__button:active:after {
-        background-color: $color_5;
-    }
+    } 
     &__ipad {
         grid-row: 1;
         grid-column: 0.3fr;
@@ -255,6 +218,7 @@ body {
 // DETAILS
 .details {
     @include width-height(100%);
+    @include animateButton();
     grid-area: details;
     display: block;    
     background-color: $color_7;
@@ -280,28 +244,6 @@ body {
             radius: 10em;
             width: 0;
         }
-    }
-    @keyframes details-button {
-        0%   {background-color: $color_8;}
-        100%  {background-color: $color_9;}        
-    }
-    &__button:hover {
-        cursor: pointer;
-        animation-name: details-button;
-        animation-duration: 0.5s;
-        background-color: $color_9;
-        box-shadow:1px 1px 2px black, 0 0 25px $color_5, 0 0 5px $color_6;
-    }
-    &__button:hover:after {
-        background-color: $color_8;
-    }
-    // pressed
-    &__button:active {
-        background-color: $color_6;
-    }
-    // unpressed
-    &__button:active:after {
-        background-color: $color_8;
     }
     &__active_true {
         background-color: $color_9;
@@ -402,6 +344,7 @@ body {
 // FEATURES
 .features {
     @include width-height(100%, auto);
+    @include animateButton();
     padding: 2em 0 0 0;
     display: grid;
         grid-template-columns: 1fr;
@@ -424,7 +367,6 @@ body {
     }
     &__gallery-item {
         @include width-height(100%);
-        //margin: 0.5em 0;
     }    
     &__whiskey {
         grid-column: 1;
@@ -548,30 +490,7 @@ body {
     &__theme_white {
         font: normal 1.3em $font_3;
         color: $color_1;
-    }
-    @keyframes features-button {
-        0%   {background-color: $color_1;}
-        100%  {background-color: $color_5;}        
-    }
-    &__button:hover {
-        cursor: pointer;
-        animation-name: features-button;
-        animation-duration: 1s;
-        background-color: $color_5;
-        box-shadow:1px 1px 2px black, 0 0 25px $color_5, 0 0 5px $color_6;
-    }
-    // return original background
-    &__button:hover:after {
-        background-color: $color_1;
-    }
-    // pressed down
-    &__button:active {
-        background-color: $color_11;
-    }
-    // unpressed
-    &__button:active:after {
-        background-color: $color_11;
-    }
+    }   
     @media #{$media-type_1} and (min-width: $screen-md) {
         &__header-container {
             margin: 3em 0;
@@ -621,6 +540,7 @@ body {
 // SERVICES
 .services {
     @include width-height(100%);
+    @include animateButton();
     grid-area: services;
     padding: 1em 0 2em;
     &__header {
@@ -650,29 +570,7 @@ body {
             radius: 10em;
             width: 0;
         }
-    }
-    @keyframes services-button {
-        0%   {background-color: $color_8;}
-        100%  {background-color: $color_9;}        
-    }
-    &__button:hover {
-        cursor: pointer;
-        animation-name: services-button;
-        animation-duration: 0.5s;
-        background-color: $color_9;
-        box-shadow:1px 1px 2px black, 0 0 25px $color_5, 0 0 5px $color_6;
-    }
-    &__button:hover:after {
-        background-color: $color_8;
-    }
-    // pressed
-    &__button:active {
-        background-color: $color_6;
-    }
-    // unpressed
-    &__button:active:after {
-        background-color: $color_8;
-    }
+    } 
     &__active_true {
         background-color: $color_9;
     }
@@ -900,6 +798,7 @@ body {
 // PORTFOLIO
 .portfolio {
     @include width-height(100%);
+    @include animateButton();
     background-color: $color_17;    
     &__container {
         @include width-height(90%);
@@ -1089,30 +988,7 @@ body {
     &__theme_white {
         font: normal 1.3em $font_3;
         color: $color_1;
-    }
-    @keyframes features-button {
-        0%   {background-color: $color_1;}
-        100%  {background-color: $color_5;}        
-    }
-    &__button:hover {
-        cursor: pointer;
-        animation-name: features-button;
-        animation-duration: 1s;
-        background-color: $color_5;
-        box-shadow:1px 1px 2px black, 0 0 25px $color_5, 0 0 5px $color_6;
-    }
-    // return original background
-    &__button:hover:after {
-        background-color: $color_1;
-    }
-    // pressed down
-    &__button:active {
-        background-color: $color_11;
-    }
-    // unpressed
-    &__button:active:after {
-        background-color: $color_11;
-    }
+    }   
     @media #{$media-type_1} and (min-width: $screen-sm) {
         &__nav-ul {
             @include display-flex(row, wrap, space-around, center);
@@ -1173,7 +1049,7 @@ body {
         text-align: center;
     }
     &__slider-img {
-        @include width-height(17em, 22.75em);//(100%, 22.75em);
+        @include width-height(17em, 22.75em);
         margin: 0 auto;
         background: {
             position: center center;
@@ -1204,7 +1080,7 @@ body {
         cursor: pointer;
     }
     &__slider-info {
-        @include width-height(90%);//(27em);
+        @include width-height(90%);
         margin: 0 auto;
     }
     &__info-name {
@@ -1474,8 +1350,6 @@ body {
     &__button-container {
         text-align: center;
     }
-    &__button {
-    }
     &__button:hover {
         cursor: pointer;
     }
@@ -1613,11 +1487,91 @@ body {
         }
     }
 }
+//SUBSCRIBE
+.subscribe {
+    @include width-height(100%, 23.375em);
+    @include display-flex(column, wrap, center, center, center);
+    @include animateButton();
+    background: {
+        image: url(../assets/img/bg-subscribe.jpg);
+        position: center;
+        size: cover;
+        repeat: no-repeat;
+    }
+    &__header {
+        @include width-height(90%, null);
+        margin: 0 auto;
+        padding-top: 1em;
+    }
+    &__title {
+        font: 300 1.35em $font_2;
+        color: $color_1;
+        text-align: center;
+    }
+    &__subtitle {
+        font: normal 0.85em $font_3;
+        color: $color_4;
+        text-align: center;
+    }
+    &__form-container {
+        @include width-height(90%, null);
+        @include display-flex(row, wrap, center, center, center);
+        margin: 3em auto;
+    }
+    &__form {
+        @include display-flex(row, wrap, center, center, center);
+    }
+    &__form-email {
+        padding: 0.5em 0 0.5em 1em;
+        background: transparent;
+        border: solid 0.05em $color_1;
+        font: normal 0.85em $font_3;
+        color: $color_34;     
+    }
+    &__form-submit {
+        padding: 0.55em 1em;
+        font: normal 0.85em $font_3;
+        background-color: $color_32;
+        border: none;
+        color: $color_35;     
+    }
+    @media #{$media-type_1} and (min-width: $screen-sm) {
+        &__header {
+            @include width-height(60%, null);
+        }
+        &__form {
+            @include display-flex(row, nowrap, center, center);
+        }
+        &__form-email {
+            margin-right: 1em;
+        }
+        &__form-submit {
+            padding: 0.55em 1em;
+        }
+        &__form-email {
+            @include width-height(20em, null);
+        }
+        &__form-submit {
+            padding: 0.55em 2.5em;
+        }  
+    }
+    @media #{$media-type_1} and (min-width: $screen-md) {
+        &__header {
+            @include width-height(50%, null);
+        }         
+    }
+    @media #{$media-type_1} and (min-width: $screen-md) {
+        &__header {
+            @include width-height(30%, null);
+        }         
+    }
+}
 // MAP
 .map {
     @include width-height(100%, 30em);
     @include display-flex(row, nowrap, center, center);
     @include fade-in();
+    @include animateButton();
     background: {
         image: url(../assets/img/bg-map-map.png);
         position: center;
@@ -1644,10 +1598,6 @@ body {
         color: $color_1;
         margin-right: 1em;
     }
-    @keyframes about-button {
-        0%   {background-color: $color_1;}
-        100%  {background-color: $color_5;}        
-    }
     &__button {
         @include width-height(1.312em, 1.312em);
         background-image: url(../assets/img/icon-map-button.png);
@@ -1656,26 +1606,7 @@ body {
             width: 0;
             style: none;
         }
-    }
-    &__button:hover {
-        cursor: pointer;
-        animation-name: about-button;
-        animation-duration: 1s;
-        background-color: $color_5;
-        box-shadow:1px 1px 2px black, 0 0 25px $color_5, 0 0 5px $color_5;
-    }
-    // return original background
-    &__button:hover:after {
-        background-color: $color_1;
-    }
-    // pressed down
-    &__button:active {
-        background-color: $color_6;
-    }
-    // unpressed
-    &__button:active:after {
-        background-color: $color_5;
-    }    
+    }   
 }
 // FOOTER
 .footer {
