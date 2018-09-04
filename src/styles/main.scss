@@ -1524,7 +1524,7 @@ body {
     &__form-email {
         padding: 0.5em 0 0.5em 1em;
         background: transparent;
-        border: solid 0.05em $color_1;
+        border: solid 0.05em $color_34;
         font: normal 0.85em $font_3;
         color: $color_34;     
     }
@@ -1564,6 +1564,175 @@ body {
         &__header {
             @include width-height(30%, null);
         }         
+    }
+}
+// CONTACT
+.contact {
+    @include width-height(100%);//, 38em);
+    background-color: #f3f3f3;
+    &__container {
+        @include width-height(100%, null);
+    }
+    &__header {
+        @include width-height(90%, null);
+        margin: 0 auto;
+    }
+    &__title {
+        font: 300 1.35em $font_2;
+        color: #333b46;
+        text-align: center;
+    }
+    &__subtitle {
+        font: normal 0.85em $font_3;
+        color: #81868e;
+        text-align: center;
+    }
+    &__body {
+        @include width-height(100%);
+        @include display-flex(column, wrap, center, center);
+    }
+    &__box {
+        @include width-height(90%, 17em);
+        max-width: 20em;
+        margin: 1em 0;
+    }
+    &__upper {
+        @include width-height(100%, 50%);
+        background: {            
+            size: cover;
+            position: center;
+            repeat: no-repeat;
+            color: $color_24;
+        }
+    }
+    &__upper_bg_1 {
+        background-image: url(../assets/img/bg-contact-1.png);
+    }
+    &__upper_bg_2 {
+        background-image: url(../assets/img/bg-contact-2.png);
+    }
+    &__upper_bg_3 {
+        background-image: url(../assets/img/bg-contact-3.png);
+    }
+    &__inner {
+        @include width-height(100%, 100%);
+        @include display-flex(column, nowrap, center, center);
+        visibility: hidden;
+        // background-color: $color_24;
+    }
+    &__upper:hover &__inner {
+        visibility: visible;
+    }
+    &__inner_visibile_false {
+        visibility: hidden;
+    }
+    &__lower {
+        @include width-height(100%, 50%);
+        @include display-flex(column, nowrap, center, center);
+        background-color: $color_1;
+    }
+    &__type {
+        font: normal 1em $font_3;
+        color: #464646;
+    }
+    &__info {
+        font: normal 0.85em $font_3;
+        margin: 0;
+        color: #9599a0;
+    }
+    @media #{$media-type_1} and (min-width: $screen-md) {
+        padding: 2em 0;
+        &__body {
+            @include width-height(100%);
+            @include display-flex(row, nowrap, center, center);
+            padding-bottom: 2em;
+        }
+        &__box {
+            @include width-height(32%, 17em);
+            max-width: 17em;
+            margin: 1em 0.3em;
+        }       
+    }
+}
+//CONTACT-FORM
+.contact-form {
+    @include width-height(100%, 25em);
+    @include display-flex(column, nowrap, center, center);
+    @include animateButton();
+    background-color: $color_1;
+    &__form {
+        @include width-height(90%);
+        @include display-flex(column, nowrap, center, center);
+        margin: 0 auto;
+        padding: 2em 0;
+    }
+    &__upper {
+        @include width-height(100%);
+        max-width: 25em;
+        @include display-flex(column, nowrap, center, center);
+    }
+    &__lower {
+        @include width-height(100%);
+        max-width: 25em;
+        @include display-flex(column, nowrap, center, center);
+    }
+    &__input {
+        @include width-height(100%, 20em);
+        font: normal 1em $font_2;
+        color: $color_41;
+        border: solid 0.05em $color_40;
+        padding: 0em 1em;
+        margin: 0.5em 0;
+        outline-color: $color_6;
+    }
+    &__textarea {
+        @include width-height(100%, 40em);
+        resize: none;
+    }
+    &__submit {
+        @include width-height(100%, 10em);
+        background-color: $color_6;
+        padding: 0.5em 1em;
+        border: none;
+        
+    }
+    @media #{$media-type_1} and (min-width: $screen-md) {
+        @include width-height(100%, auto);
+        &__form {
+            @include width-height(60%);
+        }
+        &__upper, &__lower {
+            max-width: 100%;
+        }
+        &__upper {
+            @include display-flex(row, nowrap, space-between, center);
+        }
+        &__input {
+            @include width-height(32%, 2em);
+        }
+        &__textarea {
+            @include width-height(100%, 6em);
+            margin-top: 1em;
+        }
+        &__submit {
+            @include width-height(100%, 2em);
+            margin-top: 1em;
+        }
+    }
+    @media #{$media-type_1} and (min-width: $screen-lg) {
+        padding: 2em 0 3em;
+        &__form {
+            @include width-height(70%);
+        }
+        &__input {
+            @include width-height(32%, 3em);
+        }
+        &__textarea {
+            @include width-height(100%, 10em);
+        }
+        &__submit {
+            @include width-height(100%, 3em);
+        }
     }
 }
 // MAP

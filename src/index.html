@@ -18,7 +18,7 @@
                             BOUNCY
                         </p>
                         <nav class="header__nav">
-                            <p class="header__link-container"><a class="header__link" href="#" title="Hello">Hello</a></p>    
+                            <p class="header__link-container"><a class="header__link" href="" title="Hello">Hello</a></p>    
                             <p class="header__link-container"><a class="header__link" href="#about" title="About">About</a></p>
                             <p class="header__link-container"><a class="header__link" href="#services" title="Services">Services</a></p>
                             <p class="header__link-container"><a class="header__link" href="#portfolio" title="Portfolio">Portfolio</a></p>
@@ -131,9 +131,7 @@
 
             </div><!-- features -->
 
-            <div class="services">
-
-                <a name="services"></a>
+            <div class="services" id="services">
 
                 <header class="services__header">
                     <h2 class="services__title">
@@ -199,7 +197,7 @@
                 </div><!-- quotes__container -->
             </div><!-- quotes -->
 
-            <div class="portfolio">
+            <div class="portfolio"   id="portfolio">
                 <div class="portfolio__container">
 
                     <div class="portfolio__header">
@@ -401,7 +399,7 @@
                 </div><!-- portfolio__container -->
             </div><!-- portflio -->
 
-            <div class="team">
+            <div class="team" id="team">
                 <div class="team__container">
                     <div class="team__header">
                         <p class="team__header-title">
@@ -453,7 +451,7 @@
 
             </div><!-- testimonials -->
 
-            <div class="blog">
+            <div class="blog" id="blog">
 
                 <div class="blog__container">
 
@@ -576,15 +574,116 @@
                 </div><!-- subscribe__header-->
 
                 <div class="subscribe__form-container">
-                    <form  class="subscribe__form" name="form-subscribe">
-                        <input type="email" class="subscribe__form-email" placeholder="Email Address">
+                    <form  class="subscribe__form" name="email" action="#">
+                        <input name="email" type="email" class="subscribe__form-email" placeholder="Email Address" required>
                         <input type="submit" class="subscribe__form-submit subscribe__button" value="SUBMIT">
                     </form>
                 </div><!-- subscribe__form-container -->
 
             </div><!-- subscribe -->
 
-            <div class="map">
+            <div class="contact" id="contact">
+
+                <div class="contact__container">
+
+                    <div class="contact__header">
+                        <p class="contact__title">
+                            CONTACT US
+                        </p>
+                        <p class="contact__subtitle">
+                            At vero eos et accusamus et iusto odio
+                             dignissimos ducimus qui blanditiis praesentium
+                        </p>
+                    </div><!-- contact__header -->
+
+                    <div class="contact__body">
+
+                        <div class="contact__box">
+                            <div class="contact__upper  contact__upper_bg_1">
+                                <div class="contact__inner">
+                                    <a class="contact__inner-link" title="Contact email">
+                                        <img src="./assets/img/icon-contact-letter.png">
+                                    </a>
+                                </div>
+                            </div><!-- contact__upper -->
+                            <div class="contact__lower">
+                                <p class="contact__type">
+                                    EMAIL
+                                </p>
+                                <p class="contact__info">
+                                    hello@codecafe.com                                        
+                                </p>
+                                <p class="contact__info">
+                                    Personal@codecafe.com
+                                </p>
+                            </div><!-- contact__lower -->
+                        </div><!-- contact__box -->
+
+                        <div class="contact__box">
+                            <div class="contact__upper contact__upper_bg_2">
+                                <div class="contact__inner">
+                                    <a href="#yandex"  class="contact__inner-link" href="" title="Location">
+                                        <img src="./assets/img/icon-contact-geo.png">
+                                    </a>
+                                </div>
+                            </div><!-- contact__upper -->
+                            <div class="contact__lower">
+                                <p class="contact__type">
+                                    OUR OFFICE
+                                </p>
+                                <p class="contact__info">
+                                    240 Bhatikhana, 8200 Barisal                                        
+                                </p>
+                                <p class="contact__info">
+                                    Bangladesh 
+                                </p>
+                            </div><!-- contact__lower -->
+                        </div><!-- contact__box -->
+
+                        <div class="contact__box">
+                            <div class="contact__upper  contact__upper_bg_3">
+                                <div class="contact__inner">
+                                    <a class="contact__inner-link" href="" title="Contact phone">
+                                        <img src="./assets/img/icon-contact-phone.png">
+                                    </a>
+                                </div>
+                            </div><!-- contact__upper -->
+                            <div class="contact__lower">
+                                <p class="contact__type">
+                                    PHONE
+                                </p>
+                                <p class="contact__info">
+                                    +00 11 66 99 66 44                                 
+                                </p>
+                                <p class="contact__info">
+                                    11 99 66 44 065
+                                </p>
+                            </div><!-- contact__lower -->
+                        </div><!-- contact__box -->
+
+                    </div><!-- contact__body -->
+
+                </div><!-- contact__container -->
+
+            </div><!-- contact -->
+
+            <div class="contact-form">
+
+                <form class="contact-form__form" id="contact-form" action="#">
+                    <div class="contact-form__upper">
+                        <input type="text" class="contact-form__input" placeholder="Username" maxlength="25" required>
+                        <input name="email" type="email" class="contact-form__input" placeholder="Email" maxlength="25" required>
+                        <input type="text" class="contact-form__input" placeholder="Subject" maxlength="50" required>
+                    </div>
+                    <div class="contact-form__lower">
+                        <textarea class="contact-form__input contact-form__textarea" maxlength="200" required></textarea>
+                        <input type="submit" class="contact-form__submit contact-form__button" value="SUBMIT NOW">
+                    </div>
+                </form>
+
+            </div><!-- contact-form -->
+
+            <div class="map" id="yandex">
                 <div class="map__curtain fade-in is-paused">
                     <div class="map__curtain-content">
                         <p class="map__curtain-text">

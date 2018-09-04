@@ -1,6 +1,5 @@
 window.onload = function() {
     defaultContent();
-    slowScrolling();
     textSlider('details-content', 'details__button', 'details__active_true');
     textSlider('services-content', 'services__button', 'services__active_true');
     addListener('features__gallery-item', 'mouseenter', resizeContainer);
@@ -13,6 +12,8 @@ window.onload = function() {
     addListener('blog__button', 'click', slideBlog, blogSliderData);
     addListener('price__content', 'mouseenter', priceUp);
     addListener('price__content', 'mouseleave', priceDown);
+    addListener('contact-form__form', 'submit', validateForm);
+    addListener('subscribe__form', 'submit', validateForm);
 };
 
 const details = {
@@ -69,25 +70,31 @@ const blogSliderData = {
     blogSlider2: getContent16,
     blogSlider3: getContent17,
 }
-// const temp = {
-//     elem: ''
-// };
-// change the places of the price__content element
-// const priceUpsidedown = function(event, action, dataObj) {
-//     if(action === 'mouseenter') {
-//         // temp.elem = JSON.parse(JSON.stringify(event.target.children[1].innerHTML));
-//         event.target.children[1].innerHTML = dataObj[event.target.id]();
-//     } else if(action === 'mouseleave') {
-//         event.target.children[1].innerHTML = priceInfo[event.target.id]();
-//         // temp.elem = '';
-//     }
-// }
-// const initPrice = function() {
-//     const arrHtml = Array.from(document.getElementsByClassName('price__content-lower'));
-//     arrHtml.forEach((item, index) => {
-//         item.innerHTML = priceInfo['priceSlider' + (index + 1)]();
-//     });
-// }
+const validateForm = function(event) {
+    const content = event.target.email.value;
+    if(!validateEmail(content)) {
+        event.preventDefault();
+        alert('Your email address is wrong :(');
+    }
+}
+const validateEmail = function(email){ 
+    const reg =  /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/; // /^([A-Za-z0-9_-.])+@([A-Za-z0-9_-.])+.([A-Za-z]{2,4})$/;
+    if (reg.test(email)) {
+     return true;
+    }
+    return false; 
+} 
+const scrollSmoothAnchor = function() {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();    
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        });
+    });
+}
 const priceUp = function(event) {
         event.target.children[1].innerHTML = priceData[event.target.id]();
         event.target.classList.add('price__content_reverse_true');
@@ -192,6 +199,7 @@ const defaultContent = function() {
     document.getElementById('blog-slider').innerHTML = details.blogSlider1();
     getChart();
     getPercent();
+    scrollSmoothAnchor();
 };
 
 const resizeContainer = function(e, action) {
@@ -231,39 +239,39 @@ function textSlider(container, button, activeClass) {
 
 
 
-function slowScrolling() {
+// function slowScrolling() {
     
-// собираем все якоря; устанавливаем время анимации и количество кадров
-const anchors = [].slice.call(document.querySelectorAll('a[href*="#"]')),
-animationTime = 300,
-framesCount = 20;
+// // собираем все якоря; устанавливаем время анимации и количество кадров
+// const anchors = [].slice.call(document.querySelectorAll('a[href*="#"]')),
+// animationTime = 300,
+// framesCount = 20;
 
-    anchors.forEach(function(item) {        
-    // каждому якорю присваиваем обработчик события
-        item.addEventListener('click', function(e) {
-        // убираем стандартное поведение
-        e.preventDefault();
+//     anchors.forEach(function(item) {        
+//     // каждому якорю присваиваем обработчик события
+//         item.addEventListener('click', function(e) {
+//         // убираем стандартное поведение
+//         e.preventDefault();
 
-        // для каждого якоря берем соответствующий ему элемент и определяем его координату Y
-        let coordY = document.querySelector(item.getAttribute('href')).getBoundingClientRect().top;
+//         // для каждого якоря берем соответствующий ему элемент и определяем его координату Y
+//         let coordY = document.querySelector(item.getAttribute('href')).getBoundingClientRect().top;
 
-            // запускаем интервал, в котором
-            let scroller = setInterval(function() {
-            // считаем на сколько скроллить за 1 такт
-            let scrollBy = coordY / framesCount;
+//             // запускаем интервал, в котором
+//             let scroller = setInterval(function() {
+//             // считаем на сколько скроллить за 1 такт
+//             let scrollBy = coordY / framesCount;
             
-            // если к-во пикселей для скролла за 1 такт больше расстояния до элемента
-            // и дно страницы не достигнуто
-            if(scrollBy > window.pageYOffset - coordY && window.innerHeight + window.pageYOffset < document.body.offsetHeight) {
-              // то скроллим на к-во пикселей, которое соответствует одному такту
-              window.scrollBy(0, scrollBy);
-            } else {
-              // иначе добираемся до элемента и выходим из интервала
-              window.scrollTo(0, coordY);
-              clearInterval(scroller);
-            }
-            // время интервала равняется частному от времени анимации и к-ва кадров
-            }, animationTime / framesCount);
-        });
-    });
-}
+//             // если к-во пикселей для скролла за 1 такт больше расстояния до элемента
+//             // и дно страницы не достигнуто
+//             if(scrollBy > window.pageYOffset - coordY && window.innerHeight + window.pageYOffset < document.body.offsetHeight) {
+//               // то скроллим на к-во пикселей, которое соответствует одному такту
+//               window.scrollBy(0, scrollBy);
+//             } else {
+//               // иначе добираемся до элемента и выходим из интервала
+//               window.scrollTo(0, coordY);
+//               clearInterval(scroller);
+//             }
+//             // время интервала равняется частному от времени анимации и к-ва кадров
+//             }, animationTime / framesCount);
+//         });
+//     });
+// }
