@@ -278,10 +278,18 @@ body {
         text-align: left;
         color: $color_4;
     }
+    &__info {
+        @include width-height(auto, 21em);
+    }
+    @media #{$media-type_1} and (min-width: 400px) {
+        &__info {
+            @include width-height(auto, 16em);
+        }
+    }
     @media #{$media-type_1} and (min-width: $screen-sm) {
         &__container {
             @include width-height(70%);
-        }  
+        }
     }
     @media #{$media-type_1} and (min-width: $screen-md) {
         &__container {
@@ -338,6 +346,9 @@ body {
         }
         &__button-container {
             margin: 2em 0;
+        }
+        &__info {
+            @include width-height(auto, 14em);
         }
     }
 }
@@ -587,7 +598,7 @@ body {
         background-image: url(../assets/img/icon-services-instrument.png);
     }
     &__content {
-        @include width-height(90%);
+        @include width-height(90%, 28em);
         padding: 1em 0;
         margin: 0 auto;
     }
@@ -638,16 +649,21 @@ body {
         color: $color_8;
         margin-top: 0.5em;
     }
+    @media #{$media-type_1} and (min-width: 400px) {
+        &__content {
+            @include width-height(90%, 23em);
+        }
+    }
     @media #{$media-type_1} and (min-width: $screen-sm) {
         padding-bottom: 3em;
         &__content {
-            @include width-height(70%);
+            @include width-height(70%, 21em);
         }
         &__chart-container {
             @include display-flex(row, wrap, center, center);
         }
         &__chart {
-            margin-left: 2em;
+            margin: 0 1em;
         }
     }
     @media #{$media-type_1} and (min-width: $screen-md) {
@@ -662,7 +678,7 @@ body {
             @include display-flex(column, nowrap, start, center);
         }
         &__content {
-            @include width-height(90%);
+            @include width-height(90%, 22em);
             grid-area: content;
         }
         &__chart-container {
@@ -1047,7 +1063,7 @@ body {
         font: normal 0.85em $font_3;
         color: $color_8;
         text-align: center;
-    }
+    }    
     &__slider-img {
         @include width-height(17em, 22.75em);
         margin: 0 auto;
@@ -1105,6 +1121,9 @@ body {
         @include display-flex(row, nowrap, space-between, center);
         margin: 0 auto;
     }
+    &__chart-name {
+        @include width-height(15em);
+    }
     &__chart-name, &__chart-percent {
         font: 300 1em $font_2;
         color: $color_8;
@@ -1146,30 +1165,32 @@ body {
         }
     }
     @media #{$media-type_1} and (min-width: $screen-lg) {
+        &__header {
+            padding-bottom: 2em;
+        }
         &__container {
             @include width-height(90%);
+        }
+        &__body {
+            @include width-height(80%);
+            margin: 0 auto;
         }
         &__slider {
             @include width-height(100%);
             @include display-flex(row, nowrap, space-between, center);
-
         }
         &__slider-img {
             margin-left: 0;
         }
         &__slider-info {
-            @include width-height(40%);
+            @include width-height(60%);
             margin-right: 0;
         }
         &__info-name, &__info-position, &__info-discription {
             text-align: right;
         }
         &__info-lower {
-            @include width-height(80%);
-            margin-left: 6em;
-        }
-        &__chart {
-            @include width-height(90%);
+            @include width-height(100%);
         }
         &__chart-name {
             @include width-height(60%);
@@ -1180,7 +1201,7 @@ body {
             @include width-height(100%);
         }
         &__info-lower {
-            margin-left: 8em;
+            margin-top: 3em;
         }
     }
 }
@@ -1222,7 +1243,7 @@ body {
         background-image: url(../assets/img/img-testimonials-face-1.png);
     }
     &__slider-content {
-        @include width-height(90%);
+        @include width-height(90%, 22em);
         margin: 0 auto;
     }
     &__slider-text {
@@ -1266,6 +1287,9 @@ body {
         &__body, &__header {
             @include width-height(70%);
         }
+        &__slider-content {
+            @include width-height(90%, 14em);
+        }
     }
     @media #{$media-type_1} and (min-width: $screen-md) {        
         &__body, &__header {
@@ -1278,7 +1302,7 @@ body {
             @include display-flex(row, nowrap, space-around, center);
         }
         &__slider-content {
-            @include width-height(70%);
+            @include width-height(70%, 13em);
             margin-right: 0;
         }
     }
@@ -1313,7 +1337,7 @@ body {
         text-align: center;
     }
     &__body {
-        @include width-height(100%);//, 30em);
+        @include width-height(100%, 35em);
     }
     &__slider {
         @include width-height(100%);
@@ -1356,6 +1380,9 @@ body {
     @media #{$media-type_1} and (min-width: $screen-sm) {
         &__container {
             @include width-height(70%);
+        }
+        &__body {
+            @include width-height(100%, 23em);
         }
     }
     @media #{$media-type_1} and (min-width: $screen-md) {
@@ -1429,8 +1456,11 @@ body {
         text-align: center;
         font: normal 0.85em $font_3;
     }
+    &__body-container {
+        @include width-height(100%, 56em);
+    }
     &__content {
-        @include width-height(14.687em, 18.937em);
+        @include width-height(14.687em, 18em);
         @include display-flex(column, nowrap, center, center);
         margin: 1em auto;
         background-color: $color_22;

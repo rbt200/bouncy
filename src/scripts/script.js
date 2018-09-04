@@ -96,12 +96,14 @@ const scrollSmoothAnchor = function() {
     });
 }
 const priceUp = function(event) {
-        event.target.children[1].innerHTML = priceData[event.target.id]();
-        event.target.classList.add('price__content_reverse_true');
+    event.preventDefault();
+    event.target.children[1].innerHTML = priceData[event.target.id]();
+    event.target.classList.add('price__content_reverse_true');
 }
 const priceDown = function(event) {
-        event.target.children[1].innerHTML = priceInfo[event.target.id]();
-        event.target.classList.remove('price__content_reverse_true');
+    event.preventDefault();
+    event.target.children[1].innerHTML = priceInfo[event.target.id]();
+    event.target.classList.remove('price__content_reverse_true');
 }
 const slideBlog = function(event, action, dataObj) {
     switchSlider(dataObj)
