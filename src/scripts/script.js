@@ -1,5 +1,5 @@
 window.onload = function() {
-    defaultContent();
+    defaultContent();    
     textSlider('details-content', 'details__button', 'details__active_true');
     textSlider('services-content', 'services__button', 'services__active_true');
     addListener('features__gallery-item', 'mouseenter', resizeContainer);
@@ -14,6 +14,11 @@ window.onload = function() {
     addListener('price__content', 'mouseleave', priceDown);
     addListener('contact-form__form', 'submit', validateForm);
     addListener('subscribe__form', 'submit', validateForm);
+    // addListener('portfolio__gallery', 'resize', getGallery);
+    mqxl.addListener(getGallery);
+    mqlg.addListener(getGallery);
+    mqmd.addListener(getGallery);
+    mqsm.addListener(getGallery);
 };
 
 const details = {
@@ -70,6 +75,76 @@ const blogSliderData = {
     blogSlider2: getContent16,
     blogSlider3: getContent17,
 }
+const mqxl = window.matchMedia('(min-width: 1200px)');
+const mqlg = window.matchMedia('(min-width: 992px)');
+const mqmd = window.matchMedia('(min-width: 768px)');
+const mqsm = window.matchMedia('(min-width: 576px)');
+// check screen onresize
+function getMediaSize(e) {
+    console.log(e.media.slice(12).replace(/\D/g, ""));
+    return e.media.slice(12).replace(/\D/g, "");
+}
+const resizeColumns = function(e) {
+    let columns = 0;
+    switch (getMediaSize(e)) {
+        case '1200': columns = 4;
+            break;
+        case '992': columns = 3;
+            break;
+        case '768': columns = 3;
+            break;
+        case '576': columns = 2
+            break;
+        default : columns = 1;
+            break;
+    }
+    return columns;
+}
+const onloadColumns = function() {
+    const width = window.outerWidth;
+    switch (true) {
+        case (width < 576):
+            return 1;
+        case (width >= 576 && width < 768):
+            return 2;
+        case (width >= 768 && width < 992):
+            return 3;
+        case (width >= 992 && width < 1200):
+            return 3;
+        case (width >= 1200):
+            return 4;
+        default:
+            return 1;
+    }    
+}
+const getGallery = function(e) {
+    console.log(e);
+    const gallery = document.querySelector('.portfolio__gallery');    
+    const elements = Array.from(document.querySelectorAll('.portfolio__gallery-container'));    
+    let columns = (e !== undefined) ? resizeColumns(e) : onloadColumns();
+    console.log(columns);  
+    const arr = [];
+    for(var i = 0; i < columns; i++) {
+        const newDiv = document.createElement("div");
+        newDiv.id = `portfolio-column-${i + 1}`;
+        newDiv.className = 'portfolio__margin_all';
+        arr.push(newDiv);
+    }
+    let counter = 0;
+    const limit = elements.length / columns;
+    arr.forEach((item, index) => {
+        do {
+            item.appendChild(elements.shift());
+            ++counter;
+        } while (counter < limit);
+        counter = 0;
+    });
+    gallery.innerHTML = '';
+    arr.forEach(item => {
+        gallery.appendChild(item);
+    });
+}
+
 const validateForm = function(event) {
     const content = event.target.email.value;
     if(!validateEmail(content)) {
@@ -202,6 +277,7 @@ const defaultContent = function() {
     getChart();
     getPercent();
     scrollSmoothAnchor();
+    getGallery();
 };
 
 const resizeContainer = function(e, action) {
@@ -241,39 +317,5 @@ function textSlider(container, button, activeClass) {
 
 
 
-// function slowScrolling() {
-    
-// // собираем все якоря; устанавливаем время анимации и количество кадров
-// const anchors = [].slice.call(document.querySelectorAll('a[href*="#"]')),
-// animationTime = 300,
-// framesCount = 20;
 
-//     anchors.forEach(function(item) {        
-//     // каждому якорю присваиваем обработчик события
-//         item.addEventListener('click', function(e) {
-//         // убираем стандартное поведение
-//         e.preventDefault();
 
-//         // для каждого якоря берем соответствующий ему элемент и определяем его координату Y
-//         let coordY = document.querySelector(item.getAttribute('href')).getBoundingClientRect().top;
-
-//             // запускаем интервал, в котором
-//             let scroller = setInterval(function() {
-//             // считаем на сколько скроллить за 1 такт
-//             let scrollBy = coordY / framesCount;
-            
-//             // если к-во пикселей для скролла за 1 такт больше расстояния до элемента
-//             // и дно страницы не достигнуто
-//             if(scrollBy > window.pageYOffset - coordY && window.innerHeight + window.pageYOffset < document.body.offsetHeight) {
-//               // то скроллим на к-во пикселей, которое соответствует одному такту
-//               window.scrollBy(0, scrollBy);
-//             } else {
-//               // иначе добираемся до элемента и выходим из интервала
-//               window.scrollTo(0, coordY);
-//               clearInterval(scroller);
-//             }
-//             // время интервала равняется частному от времени анимации и к-ва кадров
-//             }, animationTime / framesCount);
-//         });
-//     });
-// }

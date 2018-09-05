@@ -817,7 +817,7 @@ body {
     @include animateButton();
     background-color: $color_17;    
     &__container {
-        @include width-height(90%);
+        @include width-height(100%);
         margin: 0 auto;
         padding: 2em 0;
     }
@@ -869,8 +869,11 @@ body {
         
     }
     &__gallery {
-        padding: 1em 0;
+        padding: 0.5em 0;
         margin-bottom: 1em;
+    }
+    &__margin_all {
+        margin: 0.5em;
     }
     &__gallery-container {
         margin-bottom: 1em;
@@ -901,8 +904,8 @@ body {
         background-image: url(../assets/img/img-gallery-6.png);
     }
     &__gallery-img-6 {
-        @include width-height(100%, 22.625em);//(474px, 362px)
-        background-image: url(../assets/img/img-gallery-7.png);
+        @include width-height(100%, 26.5em);//(474px, 362px)
+        background-image: url(../assets/img/img-gallery-11.png);
     }
     &__gallery-img-7 {
         @include width-height(100%, 19.062em);//(411px, 305px)
@@ -913,7 +916,7 @@ body {
         background-image: url(../assets/img/img-gallery-7.png);
     }
     &__gallery-img-9 {
-        @include width-height(100%, 27.5em);//(277px, 165px)
+        @include width-height(100%, 16.3em);//(277px, 165px)
         background-image: url(../assets/img/img-gallery-10.png);
     }
     &__gallery-img-10 {
@@ -925,7 +928,7 @@ body {
         background-image: url(../assets/img/img-gallery-5.png);
     }
     &__gallery-img-12 {
-        @include width-height(100%, 19.187em);//(390px, 307px)
+        @include width-height(100%, 23em);//19.187em);//(390px, 307px)
         background-image: url(../assets/img/img-gallery-9.png);
     }
     &__gallery-content {
@@ -1006,6 +1009,9 @@ body {
         color: $color_1;
     }   
     @media #{$media-type_1} and (min-width: $screen-sm) {
+        &__container {
+            @include width-height(100%);
+        }
         &__nav-ul {
             @include display-flex(row, wrap, space-around, center);
         }
@@ -1020,9 +1026,9 @@ body {
             background-color: transparent;
         }
         &__gallery {
-            column-count: 2;
-            margin-bottom: 1em;
+            @include display-flex(row, nowrap, center, start);
         }
+        
     }
     @media #{$media-type_1} and (min-width: $screen-md) {
         &__nav-ul {
@@ -1031,13 +1037,11 @@ body {
         &__nav-li {
             margin: 0 1em;
         }
-        &__gallery {
-            column-count: 3;
-        }
     }
     @media #{$media-type_1} and (min-width: $screen-lg) {
         &__gallery {
-            column-count: 4;
+            @include width-height(80%);
+            margin: 0 auto;
         }
     }
 }
@@ -1887,3 +1891,6 @@ body {
 .element_display_block {
     display: block;
 }
+
+// .grid {width: }
+.grid-item { width: 50%; }

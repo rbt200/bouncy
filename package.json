@@ -17,6 +17,7 @@
     "browser-sync": "^2.24.5",
     "chart.js": "^2.7.2",
     "del": "^3.0.0",
+    "enquire.js": "^2.1.6",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^5.0.0",
     "gulp-concat": "^2.6.1",
@@ -28,5 +29,6 @@
   },
   "keywords": [
     "bouncy"
-  ]
+  ],
+  "dependencies": {}
 }
