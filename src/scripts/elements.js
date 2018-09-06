@@ -210,19 +210,25 @@ const getContent9 = function() {
         </div><!-- team__info-middle -->
         <div class="team__info-lower">
             <div class="team__chart">
-                <span class="team__chart-name">BRANDING</span>
-                <div class="team__graph-line"></div>
-                <span class="team__chart-percent"></span>                                    
+                <div class="team__chart-upper">
+                    <span class="team__chart-name">BRANDING</span>                
+                    <span class="team__chart-percent"></span>
+                </div>
+                <div class="team__graph-line"></div>                              
             </div>
             <div class="team__chart">
-                <p class="team__chart-name">WEB DESIGN</p>
-                <div class="team__graph-line"></div>
-                <span class="team__chart-percent"></span>                                        
+                <div class="team__chart-upper">
+                    <span class="team__chart-name">WEB DESIGN</span>                
+                    <span class="team__chart-percent"></span>
+                </div>
+                <div class="team__graph-line"></div>                                       
             </div>
             <div class="team__chart">
-                <span class="team__chart-name">USER INTERFACE</span>
-                <div class="team__graph-line"></div>
-                <span class="team__chart-percent"></span>                                        
+                <div class="team__chart-upper">
+                    <span class="team__chart-name">USER INTERFACE</span>                
+                    <span class="team__chart-percent"></span>
+                </div>
+                <div class="team__graph-line"></div>                                       
             </div>
         </div><!-- team__info-lower -->
     </div><!-- team__slider-info -->
@@ -265,19 +271,25 @@ const getContent10 = function() {
         </div><!-- team__info-middle -->
         <div class="team__info-lower">
             <div class="team__chart">
-                <span class="team__chart-name">BRANDING</span>
-                <div class="team__graph-line"></div>
-                <span class="team__chart-percent"></span>                                    
+                <div class="team__chart-upper">
+                    <span class="team__chart-name">BRANDING</span>                
+                    <span class="team__chart-percent"></span>
+                </div>
+                <div class="team__graph-line"></div>                              
             </div>
             <div class="team__chart">
-                <p class="team__chart-name">WEB DESIGN</p>
-                <div class="team__graph-line"></div>
-                <span class="team__chart-percent"></span>                                        
+                <div class="team__chart-upper">
+                    <span class="team__chart-name">WEB DESIGN</span>                
+                    <span class="team__chart-percent"></span>
+                </div>
+                <div class="team__graph-line"></div>                                       
             </div>
             <div class="team__chart">
-                <span class="team__chart-name">USER INTERFACE</span>
-                <div class="team__graph-line"></div>
-                <span class="team__chart-percent"></span>                                        
+                <div class="team__chart-upper">
+                    <span class="team__chart-name">USER INTERFACE</span>                
+                    <span class="team__chart-percent"></span>
+                </div>
+                <div class="team__graph-line"></div>                                       
             </div>
         </div><!-- team__info-lower -->
     </div><!-- team__slider-info -->
@@ -320,19 +332,25 @@ const getContent11 = function() {
         </div><!-- team__info-middle -->
         <div class="team__info-lower">
             <div class="team__chart">
-                <span class="team__chart-name">BRANDING</span>
-                <div class="team__graph-line"></div>
-                <span class="team__chart-percent"></span>                                    
+                <div class="team__chart-upper">
+                    <span class="team__chart-name">BRANDING</span>                
+                    <span class="team__chart-percent"></span>
+                </div>
+                <div class="team__graph-line"></div>                              
             </div>
             <div class="team__chart">
-                <p class="team__chart-name">WEB DESIGN</p>
-                <div class="team__graph-line"></div>
-                <span class="team__chart-percent"></span>                                        
+                <div class="team__chart-upper">
+                    <span class="team__chart-name">WEB DESIGN</span>                
+                    <span class="team__chart-percent"></span>
+                </div>
+                <div class="team__graph-line"></div>                                       
             </div>
             <div class="team__chart">
-                <span class="team__chart-name">USER INTERFACE</span>
-                <div class="team__graph-line"></div>
-                <span class="team__chart-percent"></span>                                        
+                <div class="team__chart-upper">
+                    <span class="team__chart-name">USER INTERFACE</span>                
+                    <span class="team__chart-percent"></span>
+                </div>
+                <div class="team__graph-line"></div>                                       
             </div>
         </div><!-- team__info-lower -->
     </div><!-- team__slider-info -->

@@ -1122,8 +1122,12 @@ body {
     }
     &__chart {
         @include width-height(100%);
+        @include display-flex(column, nowrap, center, center);
+        margin: 0 auto 1em;
+    }
+    &__chart-upper {
+        @include width-height(100%);
         @include display-flex(row, nowrap, space-between, center);
-        margin: 0 auto;
     }
     &__chart-name {
         @include width-height(15em);
@@ -1201,6 +1205,10 @@ body {
         }
     }
     @media #{$media-type_1} and (min-width: $screen-xl) {
+        &__chart {
+            @include width-height(60%);
+            margin-right: 0;
+        }
         &__chart-name {
             @include width-height(100%);
         }
