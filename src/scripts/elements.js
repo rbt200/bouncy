@@ -64,7 +64,8 @@ const getContent3 = function() {
         </div>`;
 }
 const getContent4 = function() {
-    return `<h3 class="services__content-title">
+    return `<div class="services__container">
+    <h3 class="services__content-title">
     Graphic Design
 </h3>
 <p class="services__content-text">
@@ -84,10 +85,11 @@ const getContent4 = function() {
      <span class="services_color_green services_bold_true">
          similique sunt
      </span> in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. 
-</p>`;
+</p></div>`;
 }
 const getContent5 = function() {
-    return `<h3 class="services__content-title">
+    return `<div class="services__container">
+    <h3 class="services__content-title">
     Plug & Play
 </h3>
 <p class="services__content-text">
@@ -108,10 +110,11 @@ const getContent5 = function() {
      <span class="services_color_green services_bold_true">
          similique sunt
      </span> in culpa qui officia deserunt mollitia animi, fuga. 
-</p>`;
+</p></div>`;
 }
 const getContent6 = function() {
-    return `<h3 class="services__content-title">
+    return `<div class="services__container">
+    <h3 class="services__content-title">
     Work from anywhere
 </h3>
 <p class="services__content-text">
@@ -133,10 +136,11 @@ const getContent6 = function() {
          similique sunt
      </span> et quas molestias excepturi sint in culpa qui officia
       deserunt mollitia et quas molestias excepturi sint animi, fuga. 
-</p>`;
+</p></div>`;
 }
 const getContent7 = function() {
-    return `<h3 class="services__content-title">
+    return `<div class="services__container">
+    <h3 class="services__content-title">
     Work from anywhere
 </h3>
 <p class="services__content-text">
@@ -158,7 +162,7 @@ const getContent7 = function() {
 <p class="services__content-text">
     quos dolores et quas odio dignissimos et quas molestias
       deserunt mollitia et quas molestias excepturi sint animi, fuga. 
-</p>`;
+</p></div>`;
 }
 const getContent8 = function() {
     return `<div class="services__chart" id="services-chart1">                                

@@ -219,6 +219,7 @@ body {
 .details {
     @include width-height(100%);
     @include animateButton();
+    @include fadein();
     grid-area: details;
     display: block;    
     background-color: $color_7;
@@ -281,6 +282,14 @@ body {
     &__info {
         @include width-height(auto, 21em);
     }
+    &__info-container {
+        -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+        -moz-animation: fadein 2s; /* Firefox < 16 */
+        -ms-animation: fadein 2s; /* Internet Explorer */
+        -o-animation: fadein 2s; /* Opera < 12.1 */
+        animation: fadein 2s;
+    }
+    
     @media #{$media-type_1} and (min-width: 400px) {
         &__info {
             @include width-height(auto, 16em);
@@ -552,6 +561,7 @@ body {
 .services {
     @include width-height(100%);
     @include animateButton();
+    @include fadein();
     grid-area: services;
     padding: 1em 0 2em;
     &__header {
@@ -600,7 +610,14 @@ body {
     &__content {
         @include width-height(90%, 28em);
         padding: 1em 0;
-        margin: 0 auto;
+        margin: 0 auto;        
+    }
+    &__container {
+        -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+        -moz-animation: fadein 2s; /* Firefox < 16 */
+        -ms-animation: fadein 2s; /* Internet Explorer */
+        -o-animation: fadein 2s; /* Opera < 12.1 */
+        animation: fadein 2s;
     }
     &__content-title {
         font: normal 1.3em $font_3;
@@ -935,10 +952,13 @@ body {
         @include width-height(100%, 100%);
         visibility: hidden;
         background-color: $color_2;
-        opacity: 0.8;
+        opacity: 0;
+        transition: opacity 500ms linear, visibility 0s linear 500ms;
     }
     &__gallery-container:hover &__gallery-content {        
+        opacity: 1;
         visibility: visible;
+        transition: opacity 500ms linear, visibility 0s linear;        
     }
     &__gallery-innerbox {
         @include width-height(70%);
@@ -1048,6 +1068,7 @@ body {
 // TEAM
 .team {
     @include width-height(100%);
+    @include fadein();
     background-color: $color_1;    
     &__container {
         @include width-height(100%);
@@ -1067,7 +1088,14 @@ body {
         font: normal 0.85em $font_3;
         color: $color_8;
         text-align: center;
-    }    
+    }
+    &__slider {
+        -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+        -moz-animation: fadein 2s; /* Firefox < 16 */
+        -ms-animation: fadein 2s; /* Internet Explorer */
+        -o-animation: fadein 2s; /* Opera < 12.1 */
+        animation: fadein 2s;
+    }
     &__slider-img {
         @include width-height(17em, 22.75em);
         margin: 0 auto;
@@ -1220,6 +1248,7 @@ body {
 // TESTIMONIALS
 .testimonials {
     @include width-height(100%);
+    @include fadein();
     background-color: $color_17;
     padding: 2em 0 3em;
     &__header {
@@ -1245,6 +1274,11 @@ body {
     }
     &__slider {
         @include display-flex(column, nowrap, center, center);
+        -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+        -moz-animation: fadein 2s; /* Firefox < 16 */
+        -ms-animation: fadein 2s; /* Internet Explorer */
+        -o-animation: fadein 2s; /* Opera < 12.1 */
+        animation: fadein 2s;
     }
     &__slider-buttons {
         margin: 0 auto;
@@ -1327,6 +1361,7 @@ body {
 // BLOG
 .blog {
     @include width-height(100%);//, 50.25em);
+    @include fadein();
     padding: 1em 0;
     background: {
         image: url(../assets/img/bg-blog.jpg);
@@ -1353,6 +1388,11 @@ body {
     }
     &__slider {
         @include width-height(100%);
+        -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+        -moz-animation: fadein 2s; /* Firefox < 16 */
+        -ms-animation: fadein 2s; /* Internet Explorer */
+        -o-animation: fadein 2s; /* Opera < 12.1 */
+        animation: fadein 2s;
     }
     &__slider-header {
         font: normal 1.35 $font_3;

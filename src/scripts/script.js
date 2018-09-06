@@ -14,7 +14,6 @@ window.onload = function() {
     addListener('price__content', 'mouseleave', priceDown);
     addListener('contact-form__form', 'submit', validateForm);
     addListener('subscribe__form', 'submit', validateForm);
-    // addListener('portfolio__gallery', 'resize', getGallery);
     mqxl.addListener(getGallery);
     mqlg.addListener(getGallery);
     mqmd.addListener(getGallery);
@@ -269,11 +268,11 @@ const getImgSize = function(img) {
 
 // add default content to the page
 const defaultContent = function() {
-    document.getElementById('details-content').innerHTML = details.btnHeart();
-    document.getElementById('services-content').innerHTML = details.btnPlug();
-    document.getElementById('team-body').innerHTML = details.teamSlider1();
-    document.getElementById('testimonials-body').innerHTML = details.testimonialSlider1();
-    document.getElementById('blog-slider').innerHTML = details.blogSlider1();
+    // document.getElementById('details-content').innerHTML = details.btnHeart();
+    // document.getElementById('services-content').innerHTML = details.btnPlay();
+    // document.getElementById('team-body').innerHTML = details.teamSlider1();
+    // document.getElementById('testimonials-body').innerHTML = details.testimonialSlider1();
+    // document.getElementById('blog-slider').innerHTML = details.blogSlider1();
     getChart();
     getPercent();
     scrollSmoothAnchor();
@@ -311,7 +310,8 @@ function textSlider(container, button, activeClass) {
             item.classList.remove(activeClass);
         });
         event.target.classList.add(activeClass);
-        document.getElementById(container).innerHTML = details[event.target.id]();
+        const parent = document.getElementById(container);
+        parent.innerHTML = details[event.target.id]();
     }, false);
 };
 

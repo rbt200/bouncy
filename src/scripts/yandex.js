@@ -1,6 +1,5 @@
 let myMap;
-const t = ymaps.ready(init);
-//alert(t);
+ymaps.ready(init);
 function init () {
     myMap = new ymaps.Map('map', {
         center: [53.886, 27.609], // Минск 53.886854, 27.609846
