@@ -2,7 +2,7 @@ window.onload = function() {
     defaultContent();    
     textSlider('details-content', 'details__button', 'details__active_true');
     textSlider('services-content', 'services__button', 'services__active_true');
-    addListener('features__gallery-item', 'mouseenter', resizeContainer);
+    addListener('services__button', 'click', loadGraphCircular, servicesPercent);
     addListener('features__gallery-item', 'mouseleave', resizeContainer);
     addListener('team__content-upper', 'mouseenter', overlayElement);
     addListener('team__content-upper', 'mouseleave', overlayElement);
@@ -74,13 +74,34 @@ const blogSliderData = {
     blogSlider2: getContent16,
     blogSlider3: getContent17,
 }
+const servicesPercent = {
+    btnPlug: [70, 30, 90],
+    btnPlay: [20, 85, 65],
+    btnWork: [80, 40, 70],
+    btnRepair: [45, 65, 85],
+}
 const mqxl = window.matchMedia('(min-width: 1200px)');
 const mqlg = window.matchMedia('(min-width: 992px)');
 const mqmd = window.matchMedia('(min-width: 768px)');
 const mqsm = window.matchMedia('(min-width: 576px)');
+
+const loadGraphCircular = function(event, action, dataObj) {
+    const container = document.querySelector('.services__chart-container');
+    const elems = Array.from(document.getElementsByClassName("services__chart"));
+    elems.forEach(item => item.removeChild(item.childNodes[0]) );
+    elems.forEach((item, index) => {
+        const obj = document.createElement('object');
+        obj.setAttribute('id', `servicesSvg${index}`);
+        obj.setAttribute('type', 'image/svg+xml');
+        obj.setAttribute('data', 'assets/img/svg-graph-circule.svg');
+        item.insertBefore(obj, item.childNodes[0]);
+        const arr = Array.isArray(dataObj) ? dataObj[index] : dataObj[event.target.id][index];
+        getCirculeGraph(`servicesSvg${index}`, arr);
+    });
+}
+
 // check screen onresize
-function getMediaSize(e) {
-    console.log(e.media.slice(12).replace(/\D/g, ""));
+const getMediaSize = function(e) {
     return e.media.slice(12).replace(/\D/g, "");
 }
 const resizeColumns = function(e) {
@@ -117,11 +138,9 @@ const onloadColumns = function() {
     }    
 }
 const getGallery = function(e) {
-    console.log(e);
     const gallery = document.querySelector('.portfolio__gallery');    
     const elements = Array.from(document.querySelectorAll('.portfolio__gallery-container'));    
     let columns = (e !== undefined) ? resizeColumns(e) : onloadColumns();
-    console.log(columns);  
     const arr = [];
     for(var i = 0; i < columns; i++) {
         const newDiv = document.createElement("div");
@@ -268,15 +287,12 @@ const getImgSize = function(img) {
 
 // add default content to the page
 const defaultContent = function() {
-    // document.getElementById('details-content').innerHTML = details.btnHeart();
-    // document.getElementById('services-content').innerHTML = details.btnPlay();
-    // document.getElementById('team-body').innerHTML = details.teamSlider1();
-    // document.getElementById('testimonials-body').innerHTML = details.testimonialSlider1();
-    // document.getElementById('blog-slider').innerHTML = details.blogSlider1();
     getChart();
     getPercent();
     scrollSmoothAnchor();
     getGallery();
+    console.log(servicesPercent['btnWork']);
+    loadGraphCircular(null, null, servicesPercent['btnWork']);
 };
 
 const resizeContainer = function(e, action) {
@@ -289,7 +305,6 @@ const resizeContainer = function(e, action) {
         action === 'mouseleave' ? target.remove('features__gallery-item_height_30em') : target.add('features__gallery-item_height_30em');
     }
 }
-
 
 const addListener = function (myClass, action, myFunc, dataObj) {
     // get all elements with the same class
@@ -314,8 +329,3 @@ function textSlider(container, button, activeClass) {
         parent.innerHTML = details[event.target.id]();
     }, false);
 };
-
-
-
-
-

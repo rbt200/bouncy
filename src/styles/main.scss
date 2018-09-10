@@ -640,6 +640,7 @@ body {
     }
     &__chart-container {
         @include display-flex(row, wrap, space-around, center);
+        max-width: 25em;
     }
     &__chart {
         text-align: center;
@@ -1932,6 +1933,9 @@ body {
 }
 .element_visibility_visible {
     visibility: visible;
+}
+.element_visibility_hidden {
+    visibility: hidden;
 }
 .element_display_none {
     display: none;
