@@ -88,13 +88,7 @@ const mqsm = window.matchMedia('(min-width: 576px)');
 const loadGraphCircular = function(event, action, dataObj) {
     const container = document.querySelector('.services__chart-container');
     const elems = Array.from(document.getElementsByClassName("services__chart"));
-    elems.forEach(item => item.removeChild(item.childNodes[0]) );
     elems.forEach((item, index) => {
-        const obj = document.createElement('object');
-        obj.setAttribute('id', `servicesSvg${index}`);
-        obj.setAttribute('type', 'image/svg+xml');
-        obj.setAttribute('data', 'assets/img/svg-graph-circule.svg');
-        item.insertBefore(obj, item.childNodes[0]);
         const arr = Array.isArray(dataObj) ? dataObj[index] : dataObj[event.target.id][index];
         getCirculeGraph(`servicesSvg${index}`, arr);
     });
@@ -291,7 +285,6 @@ const defaultContent = function() {
     getPercent();
     scrollSmoothAnchor();
     getGallery();
-    console.log(servicesPercent['btnWork']);
     loadGraphCircular(null, null, servicesPercent['btnWork']);
 };
 

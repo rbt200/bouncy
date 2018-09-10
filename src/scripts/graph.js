@@ -4,22 +4,18 @@
 
 */
 
-const getCirculeGraph = function(svgId, percent) {
-    const svgObject = document.getElementById(svgId);
-    svgObject.addEventListener("load",function(e) {        
-        const svgDoc = svgObject.contentDocument;
-        const svg = svgDoc.getElementById('arc1');
-        svg.setAttribute("d", describeArc(50, 50, 45, 0, getPercent(percent)));
-        svgDoc.getElementById('arc1-percent').textContent = `${percent}%`;
-    }, false);
-    
+const getCirculeGraph = function(svgId, percent) {    
+    const svgDoc = document.getElementById(svgId).contentDocument;
+    const svg = svgDoc.getElementById('arc1');
+    svg.setAttribute("d", describeArc(50, 50, 45, 0, getPercent(percent)));
+    svgDoc.getElementById('arc1-percent').textContent = `${percent}%`;
 
     // convert % into degrees
-    const getPercent = function(percent) {
+    function getPercent(percent) {
         return ((360 / 100) * (100 - percent));
     }
 
-    const  polarToCartesian = function(centerX, centerY, radius, angleInDegrees) {
+    function polarToCartesian(centerX, centerY, radius, angleInDegrees) {
         var angleInRadians = (angleInDegrees - 90) * Math.PI / 180.0;   
         return {
           x: centerX + (radius * Math.cos(angleInRadians)),
@@ -27,7 +23,7 @@ const getCirculeGraph = function(svgId, percent) {
         };
     }
     
-    const describeArc = function(x, y, radius, startAngle, endAngle){
+    function describeArc(x, y, radius, startAngle, endAngle){
 
         var start = polarToCartesian(x, y, radius, endAngle);
         var end = polarToCartesian(x, y, radius, startAngle);
@@ -40,5 +36,5 @@ const getCirculeGraph = function(svgId, percent) {
         ].join(" ");
 
         return d;       
-        }
     }
+}
