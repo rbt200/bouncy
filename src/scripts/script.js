@@ -18,6 +18,7 @@ window.onload = function() {
     mqlg.addListener(getGallery);
     mqmd.addListener(getGallery);
     mqsm.addListener(getGallery);
+    // window.addEventListener('resize', func, false);
 };
 
 const details = {
@@ -84,6 +85,13 @@ const mqxl = window.matchMedia('(min-width: 1200px)');
 const mqlg = window.matchMedia('(min-width: 992px)');
 const mqmd = window.matchMedia('(min-width: 768px)');
 const mqsm = window.matchMedia('(min-width: 576px)');
+
+const func = function() {
+    const activBtn = document.querySelector(".services__active_true");
+    console.log(activBtn.id);        
+        loadGraphCircular(null, null, servicesPercent[activBtn.id]);
+}
+
 
 const loadGraphCircular = function(event, action, dataObj) {
     const container = document.querySelector('.services__chart-container');

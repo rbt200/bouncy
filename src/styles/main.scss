@@ -608,7 +608,7 @@ body {
         background-image: url(../assets/img/icon-services-instrument.png);
     }
     &__content {
-        @include width-height(90%, 28em);
+        @include width-height(90%, 23em);
         padding: 1em 0;
         margin: 0 auto;        
     }
@@ -640,7 +640,6 @@ body {
     }
     &__chart-container {
         @include display-flex(row, wrap, space-around, center);
-        max-width: 25em;
     }
     &__chart {
         text-align: center;
@@ -669,13 +668,13 @@ body {
     }
     @media #{$media-type_1} and (min-width: 400px) {
         &__content {
-            @include width-height(90%, 23em);
+            @include width-height(90%, 20em);
         }
     }
     @media #{$media-type_1} and (min-width: $screen-sm) {
         padding-bottom: 3em;
         &__content {
-            @include width-height(70%, 21em);
+            //@include width-height(70%, 18em);
         }
         &__chart-container {
             @include display-flex(row, wrap, center, center);
