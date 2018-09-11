@@ -1550,19 +1550,6 @@ body {
         @include display-flex(column, nowrap, center, center);
         background-color: $color_1;
     }
-    // &__content_reverse_true {
-    //     @include display-flex(column-reverse, nowrap, center, center);
-    // }
-    // &__content-upper {
-    //     @include width-height(inherit, 4em);
-    //     @include display-flex(row, nowrap, center, center);
-    //     background-color: $color_32;
-    // }
-    // &__content-lower {
-    //     @include width-height(100%, 15em);
-    //     @include display-flex(column, nowrap, center, center);
-    //     background-color: $color_1;
-    // }
     &__content-plan {        
         font: bold 1.35em $font_3;
         color: $color_1;

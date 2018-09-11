@@ -10,8 +10,6 @@ window.onload = function() {
     addListener('testimonials__button', 'click', slideTestimonial, testimonialSliderData);
     addListener('map__button', 'click', displayMap, mapData);
     addListener('blog__button', 'click', slideBlog, blogSliderData);
-    // addListener('price__content', 'mouseenter', priceUp);
-    // addListener('price__content', 'mouseleave', priceDown);
     addListener('contact-form__form', 'submit', validateForm);
     addListener('subscribe__form', 'submit', validateForm);
     mqxl.addListener(getGallery);
