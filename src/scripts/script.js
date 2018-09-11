@@ -10,15 +10,14 @@ window.onload = function() {
     addListener('testimonials__button', 'click', slideTestimonial, testimonialSliderData);
     addListener('map__button', 'click', displayMap, mapData);
     addListener('blog__button', 'click', slideBlog, blogSliderData);
-    addListener('price__content', 'mouseenter', priceUp);
-    addListener('price__content', 'mouseleave', priceDown);
+    // addListener('price__content', 'mouseenter', priceUp);
+    // addListener('price__content', 'mouseleave', priceDown);
     addListener('contact-form__form', 'submit', validateForm);
     addListener('subscribe__form', 'submit', validateForm);
     mqxl.addListener(getGallery);
     mqlg.addListener(getGallery);
     mqmd.addListener(getGallery);
     mqsm.addListener(getGallery);
-    // window.addEventListener('resize', func, false);
 };
 
 const details = {
@@ -85,13 +84,6 @@ const mqxl = window.matchMedia('(min-width: 1200px)');
 const mqlg = window.matchMedia('(min-width: 992px)');
 const mqmd = window.matchMedia('(min-width: 768px)');
 const mqsm = window.matchMedia('(min-width: 576px)');
-
-const func = function() {
-    const activBtn = document.querySelector(".services__active_true");
-    console.log(activBtn.id);        
-        loadGraphCircular(null, null, servicesPercent[activBtn.id]);
-}
-
 
 const loadGraphCircular = function(event, action, dataObj) {
     const container = document.querySelector('.services__chart-container');

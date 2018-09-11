@@ -569,6 +569,11 @@ body {
         margin: 0 auto;
         text-align: center;
     }
+     &__body {
+            display: grid;
+            grid-template-columns: repeat(1fr);
+            grid-template-rows: 4;
+        }
     &__title {
         font: lighter 1.3em $font_3;
         color: $color_14;
@@ -608,7 +613,7 @@ body {
         background-image: url(../assets/img/icon-services-instrument.png);
     }
     &__content {
-        @include width-height(90%, 23em);
+        @include width-height(90%, 28em);
         padding: 1em 0;
         margin: 0 auto;        
     }
@@ -645,7 +650,7 @@ body {
         text-align: center;
     }
     &__chart-box {
-        @include width-height(3.5em, 3.5em);//(7.875em, 7.875em);
+        @include width-height(3.5em, 3.5em);
         margin: 0 auto;
         background: {
             position: center center;
@@ -673,9 +678,6 @@ body {
     }
     @media #{$media-type_1} and (min-width: $screen-sm) {
         padding-bottom: 3em;
-        &__content {
-            //@include width-height(70%, 18em);
-        }
         &__chart-container {
             @include display-flex(row, wrap, center, center);
         }
@@ -683,7 +685,7 @@ body {
             margin: 0 1em;
         }
     }
-    @media #{$media-type_1} and (min-width: $screen-md) {
+    @media #{$media-type_1} and (min-width: $screen-lg) {
         &__body {
             display: grid;
             grid-template-columns: repeat(4, 25%);
@@ -1510,19 +1512,37 @@ body {
     }
     &__body-container {
         @include width-height(100%, 56em);
+        
     }
     &__content {
-        @include width-height(14.687em, 18em);
-        @include display-flex(column, nowrap, center, center);
+        @include width-height(14em, 19em);
         margin: 1em auto;
         background-color: $color_22;
+        position: relative;
+        overflow: hidden;
     }
-    &__content_reverse_true {
-        @include display-flex(column-reverse, nowrap, center, center);
+    &__content-container {
+        @include width-height(14em, 34em);
+        @include display-flex(column, nowrap, center, center);
+        position: relative;
+        bottom: 0;
+        left: 0;
+        background-image: url(../assets/img/bg-header.png);
+        transform: translateY(-15em);
+        transition: transform 1s linear; /* adjust */
     }
+    &__content:hover  &__content-container {
+        transform: translateY(0em);
+        transition: transform 0.5s linear; /* adjust */
+      }
     &__content-upper {
-        @include width-height(inherit, 4.187em);
-        @include display-flex(row, nowrap, center, center);
+        @include width-height(100%, 15em);
+        @include display-flex(column, nowrap, center, center);
+        background-color: $color_1;
+    }
+    &__content-middle {
+        @include width-height(100%, 4em);
+        @include display-flex(column, nowrap, center, center);
         background-color: $color_32;
     }
     &__content-lower {
@@ -1530,6 +1550,19 @@ body {
         @include display-flex(column, nowrap, center, center);
         background-color: $color_1;
     }
+    // &__content_reverse_true {
+    //     @include display-flex(column-reverse, nowrap, center, center);
+    // }
+    // &__content-upper {
+    //     @include width-height(inherit, 4em);
+    //     @include display-flex(row, nowrap, center, center);
+    //     background-color: $color_32;
+    // }
+    // &__content-lower {
+    //     @include width-height(100%, 15em);
+    //     @include display-flex(column, nowrap, center, center);
+    //     background-color: $color_1;
+    // }
     &__content-plan {        
         font: bold 1.35em $font_3;
         color: $color_1;
