@@ -29,7 +29,7 @@ gulp.task('sass', function () {
 
 gulp.task('image', function () {
     gulp.src('./src/assets/img/*')
-        .pipe(image())
+        // .pipe(image())
         .pipe(gulp.dest('./build/assets/img'));
 });
 
