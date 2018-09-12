@@ -12,12 +12,13 @@ window.onload = function() {
     addListener('blog__button', 'click', slideBlog, blogSliderData);
     addListener('contact-form__form', 'submit', validateForm);
     addListener('subscribe__form', 'submit', validateForm);
+    addListener('portfolio__nav-link', 'click', getFilterdGallery);
     mqxl.addListener(getGallery);
     mqlg.addListener(getGallery);
     mqmd.addListener(getGallery);
     mqsm.addListener(getGallery);
 };
-
+const galleryArr = Array.from(document.querySelectorAll('.portfolio__gallery-container'));
 const details = {
     btnHeart: getContent1,
     btnMouse: getContent2,
@@ -83,6 +84,7 @@ const mqlg = window.matchMedia('(min-width: 992px)');
 const mqmd = window.matchMedia('(min-width: 768px)');
 const mqsm = window.matchMedia('(min-width: 576px)');
 
+
 const loadGraphCircular = function(event, action, dataObj) {
     const container = document.querySelector('.services__chart-container');
     const elems = Array.from(document.getElementsByClassName("services__chart"));
@@ -129,28 +131,59 @@ const onloadColumns = function() {
             return 1;
     }    
 }
-const getGallery = function(e) {
+const underlineLink = function(link) {
+    const links = Array.from(document.getElementsByClassName('portfolio__nav-link'));
+    links.forEach(item => {
+        if(item.classList.contains('portfolio__nav-link_theme_underlined')) {
+            item.classList.remove('portfolio__nav-link_theme_underlined');
+        }
+    });
+    link.classList.add('portfolio__nav-link_theme_underlined');
+}
+const getFilterdGallery = function(event) {
+    underlineLink(event.target);
+    filterGallery(event.target.id);
+}
+
+const filterGallery = function(category) {
+    const elements = galleryArr;
+    const filterd = elements.filter(item => {
+        if(item.dataset.gallery.split(",").includes(category)) {
+            return item;
+        }
+    });
+    // alert(filterd);
+    getGallery(undefined, filterd);
+}
+const getGallery = function(e, elemArr) {
     const gallery = document.querySelector('.portfolio__gallery');    
-    const elements = Array.from(document.querySelectorAll('.portfolio__gallery-container'));    
+    const elements = (elemArr !== undefined) ? elemArr : Array.from(document.querySelectorAll('.portfolio__gallery-container'));    
     let columns = (e !== undefined) ? resizeColumns(e) : onloadColumns();
-    const arr = [];
+    const columnArr = [];
     for(var i = 0; i < columns; i++) {
         const newDiv = document.createElement("div");
         newDiv.id = `portfolio-column-${i + 1}`;
         newDiv.className = 'portfolio__margin_all';
-        arr.push(newDiv);
+        columnArr.push(newDiv);
     }
     let counter = 0;
-    const limit = elements.length / columns;
-    arr.forEach((item, index) => {
-        do {
-            item.appendChild(elements.shift());
-            ++counter;
-        } while (counter < limit);
+    const limit = Math.ceil(elements.length / columns);
+    console.log(limit);
+    columnArr.forEach((item, index) => {
+        while(counter < limit) {
+            const temp = elements.shift();
+            console.log(temp);
+            if(temp) {
+                item.appendChild(temp);
+                ++counter;
+            } else {
+                counter += limit;
+            }            
+        }
         counter = 0;
     });
     gallery.innerHTML = '';
-    arr.forEach(item => {
+    columnArr.forEach(item => {
         gallery.appendChild(item);
     });
 }

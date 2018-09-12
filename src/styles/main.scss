@@ -863,17 +863,6 @@ body {
     &__nav-li {
         padding: 0.5em 0;
     }
-    &__nav-link_state_active {
-        text-decoration: underline;
-        text-decoration-color: $color_6;
-    }
-    &__nav-li:first-child:after {
-        content: ""; 
-        display: block;
-        margin: 0 auto;
-        width: 10%;
-        border-bottom: 0.1em solid $color_6;
-    }
     &__nav-li:hover {
         background-color: $color_16;
     }
@@ -1029,20 +1018,20 @@ body {
     &__theme_white {
         font: normal 1.3em $font_3;
         color: $color_1;
-    }   
+    }
+    &__nav-link_theme_underlined {
+        border-bottom: {
+            color: $color_6;
+            width: 0.1em;
+            style: solid;
+        }
+    }
     @media #{$media-type_1} and (min-width: $screen-sm) {
         &__container {
             @include width-height(100%);
         }
         &__nav-ul {
             @include display-flex(row, wrap, space-around, center);
-        }
-        &__nav-li:first-child:after {
-            content: ""; 
-            display: block;
-            margin: 0 auto;
-            width: 100%;
-            border-bottom: 0.1em solid $color_6;
         }
         &__nav-li:hover {
             background-color: transparent;
@@ -1534,7 +1523,7 @@ body {
     &__content:hover  &__content-container {
         transform: translateY(0em);
         transition: transform 0.5s linear; /* adjust */
-      }
+    }
     &__content-upper {
         @include width-height(100%, 15em);
         @include display-flex(column, nowrap, center, center);
