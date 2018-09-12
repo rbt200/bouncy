@@ -36,7 +36,6 @@ body {
      "contact"
      "map"
      "footer";
-    // max-width: 1365px;
     background-color: $color_1;
     @media #{$media-type_1} and (min-width: $screen-lg) {
         .header__container, .footer__container, .about__container {
@@ -121,8 +120,7 @@ body {
             width: 0;
             style: none;
         }
-    }
- 
+    } 
     @media #{$media-type_1} and (min-width: $screen-md) {
         &__upper {
             @include display-flex(row, wrap, space-between, center);
@@ -288,8 +286,7 @@ body {
         -ms-animation: fadein 2s; /* Internet Explorer */
         -o-animation: fadein 2s; /* Opera < 12.1 */
         animation: fadein 2s;
-    }
-    
+    }    
     @media #{$media-type_1} and (min-width: 400px) {
         &__info {
             @include width-height(auto, 16em);
@@ -892,51 +889,51 @@ body {
             }            
     }
     &__gallery-img-1 {
-        @include width-height(100%, 23.625em);//(276px, 378px);
+        @include width-height(100%, 23.625em);
         background-image: url(../assets/img/img-gallery-4.png);
     }
     &__gallery-img-2 {
-        @include width-height(100%, 25.937em);//(278px, 415px)
+        @include width-height(100%, 25.937em);
         background-image: url(../assets/img/img-gallery-8.png);
     }
     &__gallery-img-3 {
-        @include width-height(100%, 13.375em);//(319px, 214px)
+        @include width-height(100%, 13.375em);
         background-image: url(../assets/img/img-gallery-12.png);
     }
     &__gallery-img-4 {
-        @include width-height(100%, 14.5em);//(436px, 232px);
+        @include width-height(100%, 14.5em);
         background-image: url(../assets/img/img-gallery-3.png);
     }
     &__gallery-img-5 {
-        @include width-height(100%, 21.937em);//(468px, 351px)
+        @include width-height(100%, 21.937em);
         background-image: url(../assets/img/img-gallery-6.png);
     }
     &__gallery-img-6 {
-        @include width-height(100%, 26.5em);//(474px, 362px)
+        @include width-height(100%, 26.5em);
         background-image: url(../assets/img/img-gallery-11.png);
     }
     &__gallery-img-7 {
-        @include width-height(100%, 19.062em);//(411px, 305px)
+        @include width-height(100%, 19.062em);
         background-image: url(../assets/img/img-gallery-2.png);
     }
     &__gallery-img-8 {
-        @include width-height(100%, 27.5em);//(277px, 165px)
+        @include width-height(100%, 27.5em);
         background-image: url(../assets/img/img-gallery-7.png);
     }
     &__gallery-img-9 {
-        @include width-height(100%, 16.3em);//(277px, 165px)
+        @include width-height(100%, 16.3em);
         background-image: url(../assets/img/img-gallery-10.png);
     }
     &__gallery-img-10 {
-        @include width-height(100%, 23.375em);//(500px, 374px)
+        @include width-height(100%, 23.375em);
         background-image: url(../assets/img/img-gallery-1.png);
     }
     &__gallery-img-11 {
-        @include width-height(100%, 16.5em);//(327px, 264px)
+        @include width-height(100%, 16.5em);
         background-image: url(../assets/img/img-gallery-5.png);
     }
     &__gallery-img-12 {
-        @include width-height(100%, 23em);//19.187em);//(390px, 307px)
+        @include width-height(100%, 23em);
         background-image: url(../assets/img/img-gallery-9.png);
     }
     &__gallery-content {
@@ -1038,8 +1035,7 @@ body {
         }
         &__gallery {
             @include display-flex(row, nowrap, center, start);
-        }
-        
+        }        
     }
     @media #{$media-type_1} and (min-width: $screen-md) {
         &__nav-ul {
@@ -1261,7 +1257,7 @@ body {
         @include display-flex(column, nowrap, center, center);
         margin: 0 auto;
         background-color: $color_1;
-        padding: 1em 0 ;//3.625em 0;
+        padding: 1em 0 ;
     }
     &__slider {
         @include display-flex(column, nowrap, center, center);
@@ -1351,7 +1347,7 @@ body {
 }
 // BLOG
 .blog {
-    @include width-height(100%);//, 50.25em);
+    @include width-height(100%);
     @include fadein();
     padding: 1em 0;
     background: {
@@ -1518,11 +1514,11 @@ body {
         left: 0;
         background-image: url(../assets/img/bg-header.png);
         transform: translateY(-15em);
-        transition: transform 1s linear; /* adjust */
+        transition: transform 1s linear;
     }
     &__content:hover  &__content-container {
         transform: translateY(0em);
-        transition: transform 0.5s linear; /* adjust */
+        transition: transform 0.5s linear;
     }
     &__content-upper {
         @include width-height(100%, 15em);
@@ -1548,8 +1544,7 @@ body {
     &__content-dollar {
         display: inline;
         font: bold 2.8em $font_2;
-        color: $color_32;
-        
+        color: $color_32;        
     }
     &__content-period {
         margin: 0;
@@ -1659,7 +1654,7 @@ body {
 }
 // CONTACT
 .contact {
-    @include width-height(100%);//, 38em);
+    @include width-height(100%);
     background-color: #f3f3f3;
     &__container {
         @include width-height(100%, null);
@@ -1709,7 +1704,6 @@ body {
         @include width-height(100%, 100%);
         @include display-flex(column, nowrap, center, center);
         visibility: hidden;
-        // background-color: $color_24;
     }
     &__upper:hover &__inner {
         visibility: visible;
@@ -1784,8 +1778,7 @@ body {
         @include width-height(100%, 10em);
         background-color: $color_6;
         padding: 0.5em 1em;
-        border: none;
-        
+        border: none;        
     }
     @media #{$media-type_1} and (min-width: $screen-md) {
         @include width-height(100%, auto);
@@ -1871,7 +1864,6 @@ body {
 // FOOTER
 .footer {
     @include width-height(100%);
-    // grid-area: footer;
     background-color: $color_17;
     &__container {
         padding: 3em 0;
@@ -1898,8 +1890,6 @@ body {
         text-align: center;
     }
 }
-
-
 // CHART
 .chart {
     @include width-height(inherit, 0.2em);
@@ -1935,7 +1925,7 @@ body {
         @include width-height(90%, 0.4em);
     }    
 }
-//
+// MIX
 .element_opacity_05 {
     opacity: 0.5;
 }
@@ -1951,6 +1941,4 @@ body {
 .element_display_block {
     display: block;
 }
-
-// .grid {width: }
 .grid-item { width: 50%; }

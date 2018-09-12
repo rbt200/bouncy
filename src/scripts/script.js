@@ -83,8 +83,6 @@ const mqxl = window.matchMedia('(min-width: 1200px)');
 const mqlg = window.matchMedia('(min-width: 992px)');
 const mqmd = window.matchMedia('(min-width: 768px)');
 const mqsm = window.matchMedia('(min-width: 576px)');
-
-
 const loadGraphCircular = function(event, action, dataObj) {
     const container = document.querySelector('.services__chart-container');
     const elems = Array.from(document.getElementsByClassName("services__chart"));
@@ -93,7 +91,6 @@ const loadGraphCircular = function(event, action, dataObj) {
         getCirculeGraph(`servicesSvg${index}`, arr);
     });
 }
-
 // check screen onresize
 const getMediaSize = function(e) {
     return e.media.slice(12).replace(/\D/g, "");
@@ -144,7 +141,6 @@ const getFilterdGallery = function(event) {
     underlineLink(event.target);
     filterGallery(event.target.id);
 }
-
 const filterGallery = function(category) {
     const elements = galleryArr;
     const filterd = elements.filter(item => {
@@ -152,7 +148,6 @@ const filterGallery = function(category) {
             return item;
         }
     });
-    // alert(filterd);
     getGallery(undefined, filterd);
 }
 const getGallery = function(e, elemArr) {
@@ -168,11 +163,9 @@ const getGallery = function(e, elemArr) {
     }
     let counter = 0;
     const limit = Math.ceil(elements.length / columns);
-    console.log(limit);
     columnArr.forEach((item, index) => {
         while(counter < limit) {
             const temp = elements.shift();
-            console.log(temp);
             if(temp) {
                 item.appendChild(temp);
                 ++counter;
@@ -187,7 +180,6 @@ const getGallery = function(e, elemArr) {
         gallery.appendChild(item);
     });
 }
-
 const validateForm = function(event) {
     const content = event.target.email.value;
     if(!validateEmail(content)) {
@@ -245,7 +237,6 @@ const fadeIn = function(classSearch) {
         return false;
     }       
 }
-//
 const getChart = function(charData = teamChartData['teamSlider1']) {
     const charts = Array.from(document.getElementsByClassName("team__graph-line"));
     charts.forEach((item, index) => {
@@ -264,7 +255,6 @@ const getPercent = function(charData = teamChartData['teamSlider1']) {
         item.innerHTML = charData[index].slice(19) + '%';
     });
 }
-
 // change apperance of a slider's buttons
 const switchSlider = function(dataObj) {   
         const buttons = Array.from(document.getElementsByClassName(dataObj.rdbtnClass));
@@ -272,7 +262,6 @@ const switchSlider = function(dataObj) {
         event.target.src = dataObj.srcChecked;
         return event.target.id;
 }
-
 // change content of the team block slider
 const slideTestimonial = function(event, action, dataObj) {
     switchSlider(dataObj);
@@ -287,7 +276,6 @@ const slideTeam = function(event, action, dataObj) {
     getChart(teamChartData[event.target.id]);
     getPercent(teamChartData[event.target.id]);
 }
-
 const overlayElement = function(event, action) {
     switch (action) {
         case "mouseenter": event.target.classList.add('element_opacity_05');
@@ -298,7 +286,6 @@ const overlayElement = function(event, action) {
             break;
     }  
 }
-
 const placeContainer = function() {
     const elem = document.getElementById("portfolio__inner");
     const height = getImgSize(document.getElementById("portfolio-img")).height;
@@ -309,7 +296,6 @@ const getImgSize = function(img) {
     i.src = img.src;
     return { width: i.width, height: i.height };
 }
-
 // add default content to the page
 const defaultContent = function() {
     getChart();
@@ -318,7 +304,6 @@ const defaultContent = function() {
     getGallery();
     loadGraphCircular(null, null, servicesPercent['btnWork']);
 };
-
 const resizeContainer = function(e, action) {
     const media1 = window.matchMedia("(min-width: 768px)");
     const media2 = window.matchMedia("(min-width: 1px)");
@@ -329,19 +314,14 @@ const resizeContainer = function(e, action) {
         action === 'mouseleave' ? target.remove('features__gallery-item_height_30em') : target.add('features__gallery-item_height_30em');
     }
 }
-
 const addListener = function (myClass, action, myFunc, dataObj) {
-    // get all elements with the same class
     const elemArr = Array.from(document.getElementsByClassName(myClass));
-    // travers through the array
     elemArr.forEach(item => {
         item.addEventListener(action, function(event) {
-            // add function to the element
             myFunc(event, action, dataObj);
-        }, false); // prevent 
+        }, false);
     });
 };
-
 function textSlider(container, button, activeClass) {
     document.addEventListener('click', function (event) {
     	if (!event.target.classList.contains(button)) return;

@@ -29,7 +29,7 @@ gulp.task('sass', function () {
 
 gulp.task('image', function () {
     gulp.src('./src/assets/img/*')
-        // .pipe(image())
+        .pipe(image())
         .pipe(gulp.dest('./build/assets/img'));
 });
 
@@ -78,9 +78,9 @@ gulp.task("clean", function () {
     return del(['build/index.html', 'build/styles/style.css']);
 });
 
-// gulp.task('clean', function() {
-//     return del.sync('dist'); // Delete folder before building
-// });
+gulp.task('clean', function() {
+    return del.sync('build'); // Delete folder before building
+});
 
 gulp.task('watch', ['sass', 'pug', 'autoprefixer', 'html', 'image', 'font', 'js', 'browserSync'], function () {
     gulp.watch('./src/**/*.scss', ['sass']);
